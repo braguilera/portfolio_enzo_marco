@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({activeSection}) => {
   return (
-    <div>
-      Sidebar
-    </div>
+    <nav className='sidebar'>
+      {activeSection}
+    </nav>
   )
 }
 

@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import Sidebar from './componentes/Sidebar';
-import Footer from './componentes/Footer';
 import Hero from './componentes/Hero';
 import About from './componentes/About';
 import Projects from './componentes/Projects';
@@ -42,7 +41,6 @@ function App() {
         <section id="projects" className="min-h-screen"><Projects /></section>
         <section id="skills" className="min-h-screen"><Skills /></section>
         <section id="contact" className="min-h-screen"><Contact /></section>
-        <Footer />
       </main>
     </div>
   );
