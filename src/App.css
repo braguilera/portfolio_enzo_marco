@@ -1,9 +1,38 @@
+/* NAV */
+
+.sidebar {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0;
+  width: 10vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar div {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+
 .hero{
   background-color: green;
   width: 100%;
   height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.home_active{
+  background-color: gray;
+  width: 15%;
 }
 
 .projects{
@@ -35,11 +64,4 @@
   height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.sidebar{
-  background-color: burlywood;
-  width: 10vw;
-  height: 100vh;
-  position: fixed;
 }

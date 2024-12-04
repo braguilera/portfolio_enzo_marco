@@ -37,9 +37,9 @@ function App() {
       <Sidebar activeSection={activeSection} />
       <main className="flex-grow">
         <section id="home" className="min-h-screen"><Hero /></section>
-        <section id="about" className="min-h-screen"><About /></section>
         <section id="projects" className="min-h-screen"><Projects /></section>
         <section id="skills" className="min-h-screen"><Skills /></section>
+        <section id="about" className="min-h-screen"><About /></section>
         <section id="contact" className="min-h-screen"><Contact /></section>
       </main>
     </div>
