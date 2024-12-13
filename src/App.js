@@ -1,11 +1,11 @@
 import "./App.css";
-import Proyectos from "./components/Proyectos";
+import Inicio from "./components/Inicio";
 
 const App = () => {
 
   return (
     <>
-    <Proyectos></Proyectos>
+      <Inicio></Inicio>
     </>
   )
 }
