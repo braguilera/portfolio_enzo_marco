@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { cn } from "../lib/utils";
 import { DotPattern } from "./magicUI/DotPattern";
 import { HyperText } from './magicUI/HyperText';
 import { ShimmerButton } from './magicUI/ShimmerButton';
-
+import Pin from '../imagenes/iconos/Pin';
+import folder from '../imagenes/iconos/folder.svg'
+import { motion } from 'framer-motion';
 
 const Proyectos = () => {
+    const [isAboutHovered, setIsAboutHovered] = useState(false);
 
     const Alerta = ()  =>{
         alert("Cv descargado")
@@ -25,14 +28,52 @@ const Proyectos = () => {
             <p className="z-10 text-xl text-muted-foreground mb-8">
                 Transformando ideas en soluciones robustas y escalables
             </p>
-
             <div className="z-10 flex min-h-20 items-center justify-center">
+
                 <ShimmerButton className="shadow-2xl" funcion={Alerta}>
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Descargar CV
                     </span>
                 </ShimmerButton>
             </div>
+
+            <div className="absolute top-10 right-10 cursor-pointer">
+
+                <motion.div 
+                className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200"
+                initial={{ rotate: 3 }}
+                animate={{ 
+                    rotate: isAboutHovered ? -3 : 3, 
+                    y: isAboutHovered ? -5 : 0 
+                }}
+                onHoverStart={() => setIsAboutHovered(true)}
+                onHoverEnd={() => setIsAboutHovered(false)}
+                >
+                <Pin isHovered={isAboutHovered} />
+                <h3 className="text-gray-800 font-handwriting">About Me</h3>
+                <p className="text-sm text-gray-600 mt-2">Developer passionate about creating amazing experiences</p>
+                </motion.div>
+            </div>
+
+            <motion.div 
+            className="absolute bottom-[-70px] left-10 cursor-pointer w-[300px]"
+            initial={{ rotate: 7 }}
+            animate={{ 
+                rotate: 2
+            }}
+            >
+                <img src={folder} className='w-full'></img>
+            </motion.div>
+
+            <motion.div 
+            className="absolute bottom-[-70px] right-10 cursor-pointer w-[300px]"
+            initial={{ rotate: -7 }}
+            animate={{ 
+                rotate: -10
+            }}
+            >
+                <img src={folder} className='w-full'></img>
+            </motion.div>
 
             <DotPattern
                 className={cn(
