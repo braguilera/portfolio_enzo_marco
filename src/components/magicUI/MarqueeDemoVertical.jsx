@@ -3,36 +3,30 @@ import Marquee from '../magicUI/Marquee';
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
+    name: "Proyecto 1",
+    body: "Mi primer Proyecto XD",
     img: "https://avatar.vercel.sh/jack",
   },
   {
-    name: "Jill",
-    username: "@jill",
+    name: "Proyecto 2",
     body: "I don't know what to say. I'm speechless. This is amazing.",
     img: "https://avatar.vercel.sh/jill",
   },
   {
-    name: "John",
-    username: "@john",
+    name: "Proyecto 3",
     body: "I'm at a loss for words. This is amazing. I love it.",
     img: "https://avatar.vercel.sh/john",
   },
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
     <figure
       className={cn(
-        "relative h-40 w-36 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
+        "relative h-40 w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
@@ -52,14 +46,14 @@ const ReviewCard = ({ img, name, username, body }) => {
 
 export function MarqueeDemoVertical() {
   return (
-    <div className="absolute top-[55%] right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[130px] w-[200px] flex-row items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
+    <div className="absolute top-[55%] right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[130px] w-[250px] flex-row items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
+      <Marquee pauseOnHover vertical className="[--duration:10s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3"></div>
     </div>
   );
 }
