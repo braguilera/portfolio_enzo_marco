@@ -8,6 +8,7 @@ import folder from '../imagenes/iconos/folder.svg'
 import { motion } from 'framer-motion';
 import MarqueeComponente from './magicUI/MarqueeDemoVertical'
 import { useNavigate } from 'react-router-dom';
+import { FileTreeDemo } from './magicUI/FileTreeDemo';
 
 
 const Proyectos = () => {
@@ -22,6 +23,9 @@ const Proyectos = () => {
 
     return (
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+
+        <FileTreeDemo seleccionado={{folder:"2", file:"3"}}/>
+
             <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
                 <HyperText
                 className="text-black dark:text-white text-6xl font-bold tracking-tighter mb-4"
@@ -42,6 +46,8 @@ const Proyectos = () => {
                     </span>
                 </ShimmerButton>
             </div>
+
+
 
             <div className="absolute top-10 right-10 cursor-pointer">
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { FileTreeDemo } from './magicUI/FileTreeDemo'
 
 const Proyectos = () => {
 
@@ -24,6 +25,8 @@ const Proyectos = () => {
     ]
 
     return (
+      <main>
+        <FileTreeDemo seleccionado={{folder:"4", file:"5"}}/>
 <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
@@ -70,6 +73,7 @@ const Proyectos = () => {
         </div>
       </div>
     </div>
+      </main>
     )
 }
 
