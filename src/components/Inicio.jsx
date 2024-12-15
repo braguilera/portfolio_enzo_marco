@@ -7,14 +7,18 @@ import Pin from '../imagenes/iconos/Pin';
 import folder from '../imagenes/iconos/folder.svg'
 import { motion } from 'framer-motion';
 import MarqueeComponente from './magicUI/MarqueeDemoVertical'
+import { useNavigate } from 'react-router-dom';
 
 
 const Proyectos = () => {
     const [isAboutHovered, setIsAboutHovered] = useState(false);
+    const navegacion = useNavigate();
 
     const Alerta = ()  =>{
         alert("Cv descargado")
     }
+
+
 
     return (
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
@@ -43,6 +47,7 @@ const Proyectos = () => {
 
                 <motion.div 
                 className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200"
+                onClick={() => navegacion("/sobre_mi")}
                 initial={{ rotate: 3 }}
                 animate={{ 
                     rotate: isAboutHovered ? -3 : 3, 
@@ -51,7 +56,7 @@ const Proyectos = () => {
                 onHoverStart={() => setIsAboutHovered(true)}
                 onHoverEnd={() => setIsAboutHovered(false)}
                 >
-                <Pin isHovered={isAboutHovered} />
+                <Pin isHovered={isAboutHovered}/>
                 <h3 className="text-gray-800 font-handwriting">About Me</h3>
                 <p className="text-sm text-gray-600 mt-2">Developer passionate about creating amazing experiences</p>
                 </motion.div>
@@ -59,6 +64,7 @@ const Proyectos = () => {
 
             <motion.div 
             className="absolute bottom-[-70px] left-10 cursor-pointer w-[300px] drop-shadow-lg"
+            onClick={() => navegacion("/proyectos")}
             initial={{ rotate: -1 }}
             animate={{ rotate: 6 }}
             whileHover={{
@@ -75,6 +81,7 @@ const Proyectos = () => {
 
             <motion.div 
             className="absolute bottom-[-70px] right-10 cursor-pointer w-[300px] drop-shadow-lg"
+            onClick={() => navegacion("/habilidades")}
             initial={{ rotate: 1 }}
             animate={{ rotate: -8 }}
             whileHover={{
@@ -83,7 +90,7 @@ const Proyectos = () => {
                 transition: { duration: 0.3, ease: "easeOut" },
             }}
             >
-                <img src={folder} className='w-full ' />
+                <img src={folder} className='w-full' />
             </motion.div>
 
 

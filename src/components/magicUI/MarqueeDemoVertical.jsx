@@ -19,14 +19,14 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
+const firstRow = reviews;
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
     <figure
       className={cn(
         "relative h-40 w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "border-slate-100/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
@@ -47,7 +47,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 export function MarqueeDemoVertical() {
   return (
     <div className="absolute top-[55%] right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[130px] w-[250px] flex-row items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
-      <Marquee pauseOnHover vertical className="[--duration:10s]">
+      <Marquee pauseOnHover vertical className="[--duration:25s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
