@@ -6,6 +6,8 @@ import { ShimmerButton } from './magicUI/ShimmerButton';
 import Pin from '../imagenes/iconos/Pin';
 import folder from '../imagenes/iconos/folder.svg'
 import { motion } from 'framer-motion';
+import MarqueeComponente from './magicUI/MarqueeDemoVertical'
+
 
 const Proyectos = () => {
     const [isAboutHovered, setIsAboutHovered] = useState(false);
@@ -57,23 +59,33 @@ const Proyectos = () => {
 
             <motion.div 
             className="absolute bottom-[-70px] left-10 cursor-pointer w-[300px]"
-            initial={{ rotate: 7 }}
-            animate={{ 
-                rotate: 2
+            initial={{ rotate: -1 }}
+            animate={{ rotate: 6 }}
+            whileHover={{
+                y: -10,
+                rotate: 2, 
+                transition: { duration: 0.3, ease: "easeOut" }, 
             }}
             >
-                <img src={folder} className='w-full'></img>
+                <img src={folder} className='w-full' />
+                <MarqueeComponente/>
             </motion.div>
+
+
 
             <motion.div 
             className="absolute bottom-[-70px] right-10 cursor-pointer w-[300px]"
-            initial={{ rotate: -7 }}
-            animate={{ 
-                rotate: -10
+            initial={{ rotate: 1 }}
+            animate={{ rotate: -8 }}
+            whileHover={{
+                y: -10, // Sube 10px
+                rotate: -2, // Rotación cerca de 0
+                transition: { duration: 0.3, ease: "easeOut" }, // Animación suave
             }}
             >
-                <img src={folder} className='w-full'></img>
+                <img src={folder} className='w-full' />
             </motion.div>
+
 
             <DotPattern
                 className={cn(
