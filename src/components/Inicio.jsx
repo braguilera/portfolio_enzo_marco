@@ -27,7 +27,7 @@ const Proyectos = () => {
 
         <FileTreeDemo seleccionado={{folder:"2", file:"3"}}/>
 
-        <DockDemo></DockDemo>
+        <DockDemo/>
 
             <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
                 <HyperText
