@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import MarqueeComponente from './magicUI/MarqueeDemoVertical'
 import { useNavigate } from 'react-router-dom';
 import { FileTreeDemo } from './magicUI/FileTreeDemo';
+import { DockDemo } from './magicUI/DockDemo';
 
 
 const Proyectos = () => {
@@ -26,16 +27,18 @@ const Proyectos = () => {
 
         <FileTreeDemo seleccionado={{folder:"2", file:"3"}}/>
 
+        <DockDemo></DockDemo>
+
             <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
                 <HyperText
                 className="text-black dark:text-white text-6xl font-bold tracking-tighter mb-4"
                 text="Enzo Marco"
                 />
             </p>
-            <h2 className="z-10 text-4xl text-muted-foreground font-light mb-8">
+            <h2 className="z-10 text-4xl text-center text-muted-foreground font-light mb-8 ">
                 Ingeniero en Informática | Desarrollador Backend
             </h2>
-            <p className="z-10 text-xl text-muted-foreground mb-8">
+            <p className="z-10 text-xl text-center text-muted-foreground mb-8">
                 Transformando ideas en soluciones robustas y escalables
             </p>
             <div className="z-10 flex min-h-20 items-center justify-center">

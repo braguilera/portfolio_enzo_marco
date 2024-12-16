@@ -185,7 +185,7 @@ const Folder = forwardRef(
             `flex items-center gap-1 text-sm rounded-md`,
             className,
             {
-              "bg-muted rounded-md": isSelect && isSelectable,
+              "bg-muted rounded-md ": isSelect && isSelectable,
               "cursor-pointer": isSelectable,
               "cursor-not-allowed opacity-50": !isSelectable,
             }
@@ -194,7 +194,7 @@ const Folder = forwardRef(
           onClick={() => handleExpand(value)}
         >
           {expandedItems?.includes(value)
-            ? openIcon ?? <FolderOpenIcon className="size-4" />
+            ? openIcon ?? <FolderOpenIcon className="size-4 " />
             : closeIcon ?? <FolderIcon className="size-4" />}
           <span>{element}</span>
         </AccordionPrimitive.Trigger>
@@ -263,7 +263,7 @@ const File = forwardRef(
             }
           }}
         >
-          {fileIcon ?? <FileIcon className="size-4" />}
+          {fileIcon ?? <FileIcon className="size-4 " />}
           {children}
         </AccordionPrimitive.Trigger>
       </AccordionPrimitive.Item>
