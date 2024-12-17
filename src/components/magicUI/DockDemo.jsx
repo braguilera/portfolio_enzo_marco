@@ -5,7 +5,7 @@ import { Dock, DockIcon } from "./Dock";
 
 export function DockDemo() {
     return (
-        <div className="fixed bottom-5 z-10">
+        <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-10">
             <Dock direction="middle">
                 <DockIcon>
                     <Icons.wsp className="size-10 box-border p-2 rounded-full hover:bg-gray-100 duration-300" />

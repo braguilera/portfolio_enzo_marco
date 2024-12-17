@@ -117,7 +117,7 @@ const Proyectos = () => {
         <DockDemo/>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto lg:mx-0 w-full flex items-center justify-start flex-col">
-          <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Proyectos</h2>
+          <h2 className="text-pretty text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Proyectos</h2>
           <p className="mt-2 text-lg/8 text-gray-600 text-center">Learn how to grow your business with our expert advice.</p>
         </div>
         <div className="mx-auto  grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
