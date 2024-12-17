@@ -1,11 +1,34 @@
 import React from 'react'
 import { FileTreeDemo } from './magicUI/FileTreeDemo'
+import { useTheme } from "next-themes";
+import { MagicCard } from "./magicUI/MagicCard";
 
 const Habilidades = () => {
+
+  const { theme } = useTheme();
+
   return (
     <div>
-        <FileTreeDemo seleccionado={{folder:"6", file:"7"}}/>
-        Habilidades
+      <FileTreeDemo seleccionado={{folder:"6", file:"7"}}/>
+
+      <div
+      className={
+        "flex h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"
+      }
+      >
+        <MagicCard
+          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
+          gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+        >
+          JAVA
+        </MagicCard>
+        <MagicCard
+          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
+          gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
+        >
+          Spring Boot
+        </MagicCard>
+      </div>
     </div>
   )
 }
