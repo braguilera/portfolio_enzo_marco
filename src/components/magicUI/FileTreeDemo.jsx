@@ -7,7 +7,7 @@ export function FileTreeDemo({seleccionado}) {
   const navigate = useNavigate(); // Hook llamado dentro del componente principal
 
   return (
-    <div className="absolute top-0 left-0 flex h-[400px] w-[300px] flex-col items-center justify-center overflow-hidden rounded-lg">
+    <div className="absolute top-0 left-0 flex h-[400px] w-[180px] flex-col items-center justify-center overflow-hidden rounded-lg ">
       <Tree
         className="p-2 overflow-hidden rounded-md"
         initialSelectedId={seleccionado.file} // ID de Home.jsx

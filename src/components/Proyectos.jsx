@@ -39,22 +39,90 @@ const Proyectos = () => {
             'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
         },
       },
+      {
+        id: 3,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+          'Dirigí  el desarrollo de una aplicación dentro de un equipo de 4 personas, empleamos scrum como marco de trabajo y optamos por el modelo de diseño MVC para nuestra gestor',
+        date: 'Abril 2024 - Julio 2024',
+        datetime: '2020-03-16',
+        links: { title: 'Repositorio', href: '#' },
+        author: {
+          name: 'Michael Foster',
+          role: 'Co-Founder / CTO',
+          href: '#',
+          imageUrl:
+            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        id: 4,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+          'Dirigí  el desarrollo de una aplicación dentro de un equipo de 4 personas, empleamos scrum como marco de trabajo y optamos por el modelo de diseño MVC para nuestra gestor',
+        date: 'Abril 2024 - Julio 2024',
+        datetime: '2020-03-16',
+        links: { title: 'Repositorio', href: '#' },
+        author: {
+          name: 'Michael Foster',
+          role: 'Co-Founder / CTO',
+          href: '#',
+          imageUrl:
+            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        id: 3,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+          'Dirigí  el desarrollo de una aplicación dentro de un equipo de 4 personas, empleamos scrum como marco de trabajo y optamos por el modelo de diseño MVC para nuestra gestor',
+        date: 'Abril 2024 - Julio 2024',
+        datetime: '2020-03-16',
+        links: { title: 'Repositorio', href: '#' },
+        author: {
+          name: 'Michael Foster',
+          role: 'Co-Founder / CTO',
+          href: '#',
+          imageUrl:
+            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+      {
+        id: 4,
+        title: 'Boost your conversion rate',
+        href: '#',
+        description:
+          'Dirigí  el desarrollo de una aplicación dentro de un equipo de 4 personas, empleamos scrum como marco de trabajo y optamos por el modelo de diseño MVC para nuestra gestor',
+        date: 'Abril 2024 - Julio 2024',
+        datetime: '2020-03-16',
+        links: { title: 'Repositorio', href: '#' },
+        author: {
+          name: 'Michael Foster',
+          role: 'Co-Founder / CTO',
+          href: '#',
+          imageUrl:
+            'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        },
+      },
+
       // More posts...
     ]
 
     return (
-      <main className='relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl'>
+
+
+<div className="bg-white py-20 sm:py-32 relative flex h-[100vh] w-full flex-col items-center justify-start overflow-auto rounded-lg border bg-background md:shadow-xl">
         <FileTreeDemo seleccionado={{folder:"4", file:"5"}}/>
-
         <DockDemo/>
-
-<div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto lg:mx-0 w-full flex items-center justify-start flex-col">
           <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Proyectos</h2>
-          <p className="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.</p>
+          <p className="mt-2 text-lg/8 text-gray-600 text-center">Learn how to grow your business with our expert advice.</p>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto  grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
             <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
               <div className="flex items-center gap-x-4 text-xs">
@@ -94,7 +162,7 @@ const Proyectos = () => {
         </div>
       </div>
     </div>
-      </main>
+
     )
 }
 
