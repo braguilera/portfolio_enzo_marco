@@ -12,7 +12,7 @@ const SobreMi = () => {
 
   return (
     <>
-    <main className='flex items-start justify-center h-[100vh] w-2/6 flex-col gap-4 mx-auto my-0 bg-slate-400'>
+    <main className='flex items-start justify-center h-[100vh] w-2/6 flex-col gap-4 mx-auto my-0'>
       <FileTreeDemo seleccionado={{folder:"8", file:"9"}}/>
       
       
@@ -28,27 +28,29 @@ const SobreMi = () => {
         <p>texto largo</p>
 
         <footer className='flex w-3/4 h-full self-center gap-2'>
+        
           <ShimmerButton className="shadow-2xl w-full" funcion={Alerta}>
               <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
               Descargar CV
               </span>
           </ShimmerButton>
 
-          <InteractiveHoverButton></InteractiveHoverButton>
         </footer>
       </section>
       
-      <section>
-        <article>
-          uade1
-          uade2
-        </article>
+      <section className='flex w-full items-start justify-center gap-4  flex-col'>
+          <article className='bg-gray-100 rounded-xl p-3'>
+            <h3 className='font-bold'>Ingeniería informática</h3>
+            <p>Universidad Argentina de la Empresa (UADE)</p>
+            <small className='text-muted-foreground'>2023 - Actualidad</small>
+          </article>
 
-        <article>
-          curso1
-          curso2
-          curso3
-        </article>
+          <article className='bg-gray-100 rounded-xl p-3'>
+            <h3 className='font-bold'>Diplomatura en Desarrollo Web</h3>
+            <p>Universidad Argentina de la Empresa (UADE)</p>
+            <small className='text-muted-foreground'>2022 - 2023</small>
+          </article>
+
       </section>
 
     </main>
