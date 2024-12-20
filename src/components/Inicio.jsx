@@ -20,8 +20,6 @@ const Proyectos = () => {
         alert("Cv descargado")
     }
 
-
-
     return (
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
 
@@ -49,8 +47,6 @@ const Proyectos = () => {
                     </span>
                 </ShimmerButton>
             </div>
-
-
 
             <div className="absolute top-10 right-10 cursor-pointer">
 
@@ -86,8 +82,6 @@ const Proyectos = () => {
                 <MarqueeComponente/>
             </motion.div>
 
-
-
             <motion.div 
             className="absolute bottom-[-70px] right-10 cursor-pointer w-[300px] drop-shadow-lg"
             onClick={() => navegacion("/habilidades")}
@@ -101,7 +95,6 @@ const Proyectos = () => {
             >
                 <img src={folder} className='w-full' />
             </motion.div>
-
 
             <DotPattern
                 className={cn(
