@@ -28,7 +28,7 @@ const Habilidades = () => {
         <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
           Habilidades Técnicas
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
           Desarrollador apasionado por crear soluciones robustas y escalables.
           Mi experiencia abarca desde el desarrollo de sistemas backend hasta
           la creación de experiencias de usuario intuitivas.

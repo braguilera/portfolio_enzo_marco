@@ -68,10 +68,26 @@ const Proyectos = () => {
             </div>
 
             <motion.div 
-            className="absolute bottom-[-70px] left-10 cursor-pointer w-[300px] drop-shadow-lg"
+            className="absolute bottom-[-70px] left-10 cursor-pointer w-[500px] drop-shadow-lg"
             onClick={() => navegacion("/proyectos")}
-            initial={{ rotate: -1 }}
-            animate={{ rotate: 6 }}
+            initial={{ y: -1000, x: -1000 }} // Comienza desde x: -1000
+            animate={{
+                y: [0, 12, 0], x: [0, 10, 0], rotate: 4 // Movimiento cíclico en x después de llegar a 0
+            }}
+            transition={{
+                y: {
+                    repeat: Infinity, // Repetir indefinidamente
+
+                duration: 12, // Duración del movimiento inicial
+                ease: "easeOut", // Suavidad al llegar a 0
+                },
+                x: {
+                    repeat: Infinity, // Repetir indefinidamente
+
+                duration: 10, // Duración del movimiento inicial
+                ease: "easeOut", // Suavidad al llegar a 0
+                }
+            }}
             whileHover={{
                 y: -10,
                 rotate: 2, 
@@ -83,10 +99,26 @@ const Proyectos = () => {
             </motion.div>
 
             <motion.div 
-            className="absolute bottom-[-70px] right-10 cursor-pointer w-[300px] drop-shadow-lg"
+            className="absolute bottom-[-70px] right-10 cursor-pointer w-[500px] drop-shadow-lg"
             onClick={() => navegacion("/habilidades")}
-            initial={{ rotate: 1 }}
-            animate={{ rotate: -8 }}
+            initial={{ y: -1000, x: -1000 }} // Comienza desde x: -1000
+            animate={{
+                y: [0, 10, 0], x: [0, 8, 0], rotate: -4 // Movimiento cíclico en x después de llegar a 0
+            }}
+            transition={{
+                y: {
+                    repeat: Infinity, // Repetir indefinidamente
+
+                duration: 10, // Duración del movimiento inicial
+                ease: "easeOut", // Suavidad al llegar a 0
+                },
+                x: {
+                    repeat: Infinity, // Repetir indefinidamente
+
+                duration: 7, // Duración del movimiento inicial
+                ease: "easeOut", // Suavidad al llegar a 0
+                }
+            }}
             whileHover={{
                 y: -10,
                 rotate: -2,

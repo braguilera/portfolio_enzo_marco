@@ -18,7 +18,7 @@ const SobreMi = () => {
 
 
         <div className="grid place-content-center text-yellow-500">
-        <h1 className="max-w-4xl text-center text-5xl leading-snug">
+        <h1 className="max-w-7xl mx-auto text-center text-5xl leading-snug">
           Impulsando soluciones innovadoras y creando{" "}
           <span className="relative">
             Impacto
@@ -44,14 +44,14 @@ const SobreMi = () => {
         </h1>
         </div>
 
-          <p className="text-muted-foreground mt-2">Hola, soy</p>
-          <h2 className="text-slate-900 text-4xl font-semibold">Enzo Marco</h2>
-          <h3 className="text-muted-foreground font-light text-lg">Ingeniero de Software</h3>
         </section>
 
-        <section className="text-center mt-6 max-w-2xl">
+        <section className=" mt-6 max-w-2xl">
+          <p className="text-muted-foreground mt-2">Hola, soy</p>
+          <h2 className="text-slate-900 text-4xl font-semibold">Enzo Marco</h2>
+          <h3 className="text-muted-foreground font-light text-lg pb-2">Ingeniero de Software</h3>
           <p className="text-slate-700 leading-relaxed">
-            Soy un estudiante universitario de tercer año con el objetivo de adentrarme en el mundo laboral,
+            Estudiante universitario con el objetivo de adentrarme en el mundo laboral,
             ocupando puestos relacionados con el back-end. Me apasiona crear aplicaciones funcionales que
             resuelvan problemas del día a día, mientras desarrollo mis habilidades técnicas y personales.
           </p>

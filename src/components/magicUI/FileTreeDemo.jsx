@@ -66,6 +66,19 @@ const ELEMENTS = [
         ],
       },
       {
+        id: "8",
+        isSelectable: true,
+        name: "about_me",
+        children: [
+          {
+            id: "9",
+            isSelectable: true,
+            name: "AboutMe.jsx",
+            navegation: "sobre_mi",
+          },
+        ],
+      },
+      {
         id: "4",
         isSelectable: true,
         name: "projects",
@@ -91,32 +104,7 @@ const ELEMENTS = [
           },
         ],
       },
-      {
-        id: "8",
-        isSelectable: true,
-        name: "about_me",
-        children: [
-          {
-            id: "9",
-            isSelectable: true,
-            name: "AboutMe.jsx",
-            navegation: "sobre_mi",
-          },
-        ],
-      },
-      {
-        id: "10",
-        isSelectable: true,
-        name: "contact",
-        children: [
-          {
-            id: "11",
-            isSelectable: true,
-            name: "Contact.jsx",
-            navegation: "contacto",
-          },
-        ],
-      },
+      
     ],
   },
 ];

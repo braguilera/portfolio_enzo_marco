@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Dock, DockIcon } from "./Dock";
+import { Separator } from "../ui/Separator";
 
 
 export function DockDemo() {
@@ -10,6 +11,7 @@ export function DockDemo() {
                 <DockIcon>
                     <Icons.wsp className="size-10 box-border p-2 rounded-full hover:bg-gray-100 duration-300" />
                 </DockIcon>
+                <Separator className="h-full py-2"></Separator>
                 <DockIcon>
                     <Icons.mail className="size-10 box-border p-2 rounded-full hover:bg-gray-100 duration-300" />
                 </DockIcon>
