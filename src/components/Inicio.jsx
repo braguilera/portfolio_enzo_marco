@@ -125,7 +125,9 @@ const Proyectos = () => {
                 transition: { duration: 0.3, ease: "easeOut" },
             }}
             >
+                <h3 className='absolute bottom-[60%] font-semibold text-xl mb-4 text text-gray-800 w-full text-center'>Conocimientos</h3>
                 <img src={folder} className='w-full' />
+
             </motion.div>
 
             <DotPattern

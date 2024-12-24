@@ -60,18 +60,20 @@ const ReviewCard = ({ img, name, username, body }) => {
 
 export function MarqueeDemoVertical() {
   return (
-    <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[200px] w-3/4 flex-row items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
-      <h3 className='absolute'>Experiencia</h3>
-      <Marquee pauseOnHover vertical className="[--duration:25s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:25s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
+    <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[230px] w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
+      <h3 className=' font-semibold text-xl mb-4 text text-gray-800 w-full text-center'>Experiencia</h3>
+      <div className='w-full flex overflow-hidden'>
+        <Marquee pauseOnHover vertical className="[--duration:25s]">
+          {firstRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+        <Marquee reverse pauseOnHover vertical className="[--duration:25s]">
+          {secondRow.map((review) => (
+            <ReviewCard key={review.username} {...review} />
+          ))}
+        </Marquee>
+      </div>
 
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3"></div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3"></div>
