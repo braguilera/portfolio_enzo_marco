@@ -1,19 +1,28 @@
 import React from 'react';
-import { Code, Database, GitBranch, Globe, Server, Terminal, Container, Mail  } from 'lucide-react';
 import { MagicCard } from "./magicUI/MagicCard";
 import { useTheme } from "next-themes";
 import { FileTreeDemo } from './magicUI/FileTreeDemo'
+import { DockDemo } from './magicUI/DockDemo';
+import java from '../imagenes/iconos/java.svg'
+import springBoot from '../imagenes/iconos/springBoot.svg'
+import angular from '../imagenes/iconos/angular.svg'
+import postgre from '../imagenes/iconos/postgreSQL.svg'
+import github from '../imagenes/iconos/github.svg'
+import docker from '../imagenes/iconos/docker.svg'
+import ingles from '../imagenes/iconos/ingles.svg'
+import hibernate from '../imagenes/iconos/hibernate.svg'
+import postman from '../imagenes/iconos/postman.svg'
 
 const skillsData = [
-  { name: 'JAVA', icon: Terminal, description: 'Desarrollo Backend' },
-  { name: 'Spring Boot', icon: Server, description: 'Desarrollo de APIs' },
-  { name: 'Angular', icon: Code, description: 'Desarrollo de UI Moderno' },
-  { name: 'Postgre SQL', icon: Database, description: 'Gestión de Datos' },
-  { name: 'GitHub', icon: GitBranch, description: 'Control de Versiones' },
-  { name: 'Docker', icon: Container , description: 'Containerización' },
-  { name: 'Inglés', icon: Globe, description: 'Profesional' },
-  { name: 'Hibernate', icon: Database, description: 'Mapeo O/R' },
-  { name: 'Postman', icon: Mail, description: 'Testing de APIs' },
+  { name: 'JAVA', icon: java, description: 'Desarrollo Backend' },
+  { name: 'Spring Boot', icon: springBoot, description: 'Desarrollo de APIs' },
+  { name: 'Angular', icon: angular, description: 'Desarrollo de UI Moderno' },
+  { name: 'Postgre SQL', icon: postgre, description: 'Gestión de Datos' },
+  { name: 'GitHub', icon: github, description: 'Control de Versiones' },
+  { name: 'Docker', icon: docker , description: 'Containerización' },
+  { name: 'Inglés', icon: ingles, description: 'Profesional' },
+  { name: 'Hibernate', icon: hibernate, description: 'Mapeo O/R' },
+  { name: 'Postman', icon: postman, description: 'Testing de APIs' },
 ];
 
 const Habilidades = () => {
@@ -23,6 +32,9 @@ const Habilidades = () => {
     <div className="min-h-screen w-full py-16 px-4">
 
       <FileTreeDemo seleccionado={{folder:"6", file:"7"}}/>
+
+      <DockDemo/>
+      
 
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
@@ -43,7 +55,7 @@ const Habilidades = () => {
             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
           >
             <div className="flex flex-col items-center space-y-3">
-              <skill.icon className="w-8 h-8 text-yellow-500 transition-transform duration-300 group-hover:scale-110" />
+              <img src={skill.icon}></img>
               <span className="font-medium transition-colors duration-300 group-hover:text-yellow-500">
                 {skill.name}
               </span>

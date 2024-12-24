@@ -62,7 +62,7 @@ const Proyectos = () => {
                 onHoverEnd={() => setIsAboutHovered(false)}
                 >
                 <Pin isHovered={isAboutHovered}/>
-                <h3 className="text-gray-800 font-handwriting">About Me</h3>
+                <h3 className="text-gray-800 font-handwriting">Sobre mí</h3>
                 <p className="text-sm text-gray-600 mt-2">Developer passionate about creating amazing experiences</p>
                 </motion.div>
             </div>
@@ -70,22 +70,22 @@ const Proyectos = () => {
             <motion.div 
             className="absolute bottom-[-70px] left-10 cursor-pointer w-[500px] drop-shadow-lg"
             onClick={() => navegacion("/proyectos")}
-            initial={{ y: -1000, x: -1000 }} // Comienza desde x: -1000
+            initial={{ y: -1000, x: -1000 }}
             animate={{
-                y: [0, 12, 0], x: [0, 10, 0], rotate: 4 // Movimiento cíclico en x después de llegar a 0
+                y: [0, 12, 0], x: [0, 10, 0], rotate: 4
             }}
             transition={{
                 y: {
-                    repeat: Infinity, // Repetir indefinidamente
+                    repeat: Infinity,
 
-                duration: 12, // Duración del movimiento inicial
-                ease: "easeOut", // Suavidad al llegar a 0
+                duration: 12, 
+                ease: "easeOut",
                 },
                 x: {
-                    repeat: Infinity, // Repetir indefinidamente
+                    repeat: Infinity, 
 
-                duration: 10, // Duración del movimiento inicial
-                ease: "easeOut", // Suavidad al llegar a 0
+                duration: 10, 
+                ease: "easeOut",
                 }
             }}
             whileHover={{
@@ -101,22 +101,22 @@ const Proyectos = () => {
             <motion.div 
             className="absolute bottom-[-70px] right-10 cursor-pointer w-[500px] drop-shadow-lg"
             onClick={() => navegacion("/habilidades")}
-            initial={{ y: -1000, x: -1000 }} // Comienza desde x: -1000
+            initial={{ y: -1000, x: -1000 }} 
             animate={{
-                y: [0, 10, 0], x: [0, 8, 0], rotate: -4 // Movimiento cíclico en x después de llegar a 0
+                y: [0, 10, 0], x: [0, 8, 0], rotate: -4 
             }}
             transition={{
                 y: {
-                    repeat: Infinity, // Repetir indefinidamente
+                    repeat: Infinity, 
 
-                duration: 10, // Duración del movimiento inicial
-                ease: "easeOut", // Suavidad al llegar a 0
+                duration: 10, 
+                ease: "easeOut", 
                 },
                 x: {
-                    repeat: Infinity, // Repetir indefinidamente
+                    repeat: Infinity, 
 
-                duration: 7, // Duración del movimiento inicial
-                ease: "easeOut", // Suavidad al llegar a 0
+                duration: 7, 
+                ease: "easeOut", 
                 }
             }}
             whileHover={{

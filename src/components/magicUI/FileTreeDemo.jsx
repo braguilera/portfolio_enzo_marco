@@ -11,7 +11,7 @@ export function FileTreeDemo({seleccionado}) {
       <Tree
         className="p-2 overflow-hidden rounded-md"
         initialSelectedId={seleccionado.file} // ID de Home.jsx
-        initialExpandedItems={["1", seleccionado.folder]} // Expande "src" y "home"
+        initialExpandedItems={[seleccionado.folder]} // Expande "src" y "home"
         elements={ELEMENTS}
       >
         {renderElements(ELEMENTS, navigate)}

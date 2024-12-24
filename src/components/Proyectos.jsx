@@ -2,6 +2,12 @@ import React from 'react';
 import { Code, Database, GitBranch, Globe, Server, Terminal, Container, Mail  } from 'lucide-react';
 import { FileTreeDemo } from './magicUI/FileTreeDemo';
 import { DockDemo } from './magicUI/DockDemo';
+import java from '../imagenes/iconos/java.svg'
+import springBoot from '../imagenes/iconos/springBoot.svg'
+import postgre from '../imagenes/iconos/postgreSQL.svg'
+import github from '../imagenes/iconos/github.svg'
+import react from '../imagenes/iconos/react.svg'
+
 
 
 const ExperienciaYProyectos = () => {
@@ -15,10 +21,10 @@ const ExperienciaYProyectos = () => {
       datetime: '2024-07-01',
       links: { href: '#', title: 'Repositorio' },
       skills: [
-        { icon: Terminal, name: 'Java', type: 'Backend' },
-        { icon: Server, name: 'Spring Boot', type: 'Framework' },
-        { icon: Database, name: 'Postgre SQL', type: 'Database' },
-        { icon: Code, name: 'React', type: 'Frontend' }
+        { icon: java, name: 'Java', type: 'Backend' },
+        { icon: springBoot, name: 'Spring Boot', type: 'Framework' },
+        { icon: postgre, name: 'Postgre SQL', type: 'Database' },
+        { icon: react, name: 'React', type: 'Frontend' }
       ]
     },
     {
@@ -30,9 +36,9 @@ const ExperienciaYProyectos = () => {
       datetime: '2024-08-01',
       links: { href: '#', title: 'Repositorio' },
       skills: [
-        { icon: Terminal, name: 'Java', type: 'Backend' },
-        { icon: Server, name: 'Spring Boot', type: 'Framework' },
-        { icon: Database, name: 'Postgre SQL', type: 'Database' }
+        { icon: java, name: 'Java', type: 'Backend' },
+        { icon: springBoot, name: 'Spring Boot', type: 'Framework' },
+        { icon: github, name: 'Postgre SQL', type: 'Database' }
       ]
     }
   ];
@@ -115,7 +121,7 @@ const ExperienciaYProyectos = () => {
                           key={index}
                           className="flex flex-col items-center p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 select-none"
                         >
-                          <skill.icon className="w-6 h-6 text-yellow-500 transition-transform duration-300" />
+                          <img src={skill.icon}></img>
                           <span className="text-xs font-medium text-gray-600">{skill.name}</span>
                           <span className="text-[10px] text-gray-400">{skill.type}</span>
                         </div>

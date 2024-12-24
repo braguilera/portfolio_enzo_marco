@@ -1,7 +1,7 @@
 import { cn } from '../../lib/utils';
 import Marquee from '../magicUI/Marquee';
 
-const reviews = [
+const projects = [
   {
     name: "Proyecto 1",
     body: "Mi primer Proyecto XD",
@@ -19,7 +19,21 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews;
+const works = [
+  {
+    name: "Trabajo 1",
+    body: "Mi primer Proyecto XD",
+    img: "https://avatar.vercel.sh/jack",
+  },
+  {
+    name: "Trabajo 2",
+    body: "I don't know what to say. I'm speechless. This is amazing.",
+    img: "https://avatar.vercel.sh/jill",
+  },
+];
+
+const firstRow = projects;
+const secondRow = works;
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
@@ -46,13 +60,20 @@ const ReviewCard = ({ img, name, username, body }) => {
 
 export function MarqueeDemoVertical() {
   return (
-    <div className="absolute top-[55%] right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[130px] w-[250px] flex-row items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
+    <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[200px] w-3/4 flex-row items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
+      <h3 className='absolute'>Experiencia</h3>
       <Marquee pauseOnHover vertical className="[--duration:25s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
+      <Marquee reverse pauseOnHover vertical className="[--duration:25s]">
+        {secondRow.map((review) => (
+          <ReviewCard key={review.username} {...review} />
+        ))}
+      </Marquee>
 
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3"></div>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3"></div>
     </div>
   );
