@@ -5,21 +5,103 @@ import { HyperText } from './magicUI/HyperText';
 import { ShimmerButton } from './magicUI/ShimmerButton';
 import Pin from '../imagenes/iconos/Pin';
 import folder from '../imagenes/iconos/folder.svg'
-import { motion } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 import MarqueeComponente from './magicUI/MarqueeDemoVertical'
 import { useNavigate } from 'react-router-dom';
 import { FileTreeDemo } from './magicUI/FileTreeDemo';
 import { DockDemo } from './magicUI/DockDemo';
+import java from '../imagenes/iconos/java.svg'
+import springBoot from '../imagenes/iconos/springBoot.svg'
+import postgre from '../imagenes/iconos/postgreSQL.svg'
+import docker from '../imagenes/iconos/docker.svg'
+import hibernate from '../imagenes/iconos/hibernate.svg'
 
 
 const Proyectos = () => {
     const [isAboutHovered, setIsAboutHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+
+
     const navegacion = useNavigate();
 
     const Alerta = ()  =>{
         alert("Cv descargado")
     }
 
+    const createFloatingAnimation = (delayOffset) => ({
+        y: [0, -5, 0],
+        transition: {
+            duration: 3 + Math.random() * 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+            delay: delayOffset
+        }
+    });
+
+    // Variantes para cada posición
+    const leftmostVariants = {
+        initial: {
+            scale: 0.9,
+            x: 0,
+        },
+        hover: {
+            scale: 1,
+            x: -100,
+            transition: { duration: 0.5, delay: 0.4 }
+        },
+        floating: createFloatingAnimation(0)
+    };
+
+    const leftVariants = {
+        initial: {
+            scale: 0.9,
+            x: 0,
+        },
+        hover: {
+            scale: 1,
+            x: -50,
+            transition: { duration: 0.5, delay: 0.2 }
+        },
+        floating: createFloatingAnimation(1.2)
+    };
+
+    const centerVariants = {
+        initial: {
+            scale: 0.9,
+        },
+        hover: {
+            scale: 1,
+            transition: { duration: 0.5, delay: 0 }
+        },
+        floating: createFloatingAnimation(0.5)
+    };
+
+    const rightVariants = {
+        initial: {
+            scale: 0.9,
+            x: 0,
+        },
+        hover: {
+            scale: 1,
+            x: 50,
+            transition: { duration: 0.5, delay: 0.2 }
+        },
+        floating: createFloatingAnimation(0.8)
+    };
+
+    const rightmostVariants = {
+        initial: {
+            scale: 0.9,
+            x: 0,
+        },
+        hover: {
+            scale: 1,
+            x: 100,
+            transition: { duration: 0.5, delay: 0.4 }
+        },
+        floating: createFloatingAnimation(1.5)
+    };
     return (
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
 
@@ -63,7 +145,7 @@ const Proyectos = () => {
                 >
                 <Pin isHovered={isAboutHovered}/>
                 <h3 className="text-gray-800 font-handwriting">Sobre mí</h3>
-                <p className="text-sm text-gray-600 mt-2">Developer passionate about creating amazing experiences</p>
+                <p className="text-sm text-gray-600 mt-2 font-handwriting">Developer passionate about creating amazing experiences</p>
                 </motion.div>
             </div>
 
@@ -125,7 +207,57 @@ const Proyectos = () => {
                 transition: { duration: 0.3, ease: "easeOut" },
             }}
             >
-                <h3 className='absolute bottom-[60%] font-semibold text-xl mb-4 text text-gray-800 w-full text-center'>Conocimientos</h3>
+                <h3 className='absolute bottom-[60%] text-xl mb-4 text text-gray-800 w-full text-center'>Conocimientos</h3>
+                <div 
+                className='w-full h-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/3'
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
+                {/* Extremo izquierdo */}
+                <motion.img 
+                    initial="initial"
+                    animate={["floating", isHovered ? "hover" : "initial"]}
+                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-36 left-[16%]'
+                    src={docker}
+                    variants={leftmostVariants}
+                />
+                
+                {/* Izquierda adyacente al centro */}
+                <motion.img 
+                    initial="initial"
+                    animate={["floating", isHovered ? "hover" : "initial"]}
+                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-32 left-[26%]'
+                    src={postgre}
+                    variants={leftVariants}
+                />
+                
+                {/* Centro (Java) */}
+                <motion.img 
+                    initial="initial"
+                    animate={["floating", isHovered ? "hover" : "initial"]}
+                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-28 left-[41%] z-30'
+                    src={java}
+                    variants={centerVariants}
+                />
+                
+                {/* Derecha adyacente al centro */}
+                <motion.img 
+                    initial="initial"
+                    animate={["floating", isHovered ? "hover" : "initial"]}
+                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-32 right-[26%] z-20'
+                    src={springBoot}
+                    variants={rightVariants}
+                />
+                
+                {/* Extremo derecho */}
+                <motion.img 
+                    initial="initial"
+                    animate={["floating", isHovered ? "hover" : "initial"]}
+                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-36 right-[16%] z-10'
+                    src={hibernate}
+                    variants={rightmostVariants}
+                />
+            </div>
                 <img src={folder} className='w-full' />
 
             </motion.div>

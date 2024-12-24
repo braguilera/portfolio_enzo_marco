@@ -40,7 +40,7 @@ const ReviewCard = ({ img, name, username, body }) => {
     <figure
       className={cn(
         "relative h-40 w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-slate-100/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "border-slate-400/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
@@ -61,7 +61,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 export function MarqueeDemoVertical() {
   return (
     <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[230px] w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
-      <h3 className=' font-semibold text-xl mb-4 text text-gray-800 w-full text-center'>Experiencia</h3>
+      <h3 className=' text-xl mb-4 text text-gray-800 w-full text-center'>Experiencia</h3>
       <div className='w-full flex overflow-hidden'>
         <Marquee pauseOnHover vertical className="[--duration:25s]">
           {firstRow.map((review) => (
