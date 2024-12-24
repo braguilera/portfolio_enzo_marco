@@ -28,16 +28,6 @@ const Proyectos = () => {
         alert("Cv descargado")
     }
 
-    const createFloatingAnimation = (delayOffset) => ({
-        y: [0, -5, 0],
-        transition: {
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay: delayOffset
-        }
-    });
 
     // Variantes para cada posición
     const leftmostVariants = {
@@ -47,10 +37,9 @@ const Proyectos = () => {
         },
         hover: {
             scale: 1,
-            x: -100,
-            transition: { duration: 0.5, delay: 0.4 }
+            x: -75,
+            transition: { duration: 0.3, delay: 0.4 }
         },
-        floating: createFloatingAnimation(0)
     };
 
     const leftVariants = {
@@ -60,10 +49,9 @@ const Proyectos = () => {
         },
         hover: {
             scale: 1,
-            x: -50,
-            transition: { duration: 0.5, delay: 0.2 }
+            x: -25,
+            transition: { duration: 0.3, delay: 0.2 }
         },
-        floating: createFloatingAnimation(1.2)
     };
 
     const centerVariants = {
@@ -72,9 +60,8 @@ const Proyectos = () => {
         },
         hover: {
             scale: 1,
-            transition: { duration: 0.5, delay: 0 }
+            transition: { duration: 0.3, delay: 0 }
         },
-        floating: createFloatingAnimation(0.5)
     };
 
     const rightVariants = {
@@ -85,9 +72,8 @@ const Proyectos = () => {
         hover: {
             scale: 1,
             x: 50,
-            transition: { duration: 0.5, delay: 0.2 }
+            transition: { duration: 0.3, delay: 0.2 }
         },
-        floating: createFloatingAnimation(0.8)
     };
 
     const rightmostVariants = {
@@ -98,9 +84,8 @@ const Proyectos = () => {
         hover: {
             scale: 1,
             x: 100,
-            transition: { duration: 0.5, delay: 0.4 }
+            transition: { duration: 0.3, delay: 0.4 }
         },
-        floating: createFloatingAnimation(1.5)
     };
     return (
         <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
