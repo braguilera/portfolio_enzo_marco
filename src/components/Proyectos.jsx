@@ -46,18 +46,11 @@ const ExperienciaYProyectos = () => {
   const experiencia = [
     {
       id: 1,
-      position: 'Desarrollador Frontend',
-      company: 'TechCorp',
+      position: 'Desarrollador Full-Stack',
+      company: 'Quadrant',
       description: 'Colaboré en el diseño y desarrollo de una aplicación web utilizando React y TypeScript, trabajando en un equipo ágil.',
-      date: 'Enero 2023 - Marzo 2024'
+      date: 'Dicienbre 2024 - Actualidad'
     },
-    {
-      id: 2,
-      position: 'Practicante en Desarrollo Fullstack',
-      company: 'CodeFactory',
-      description: 'Participé en el desarrollo de una API RESTful con Node.js y el diseño de interfaces responsivas con Bootstrap.',
-      date: 'Agosto 2022 - Diciembre 2022'
-    }
   ];
 
   return (

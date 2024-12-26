@@ -3,49 +3,35 @@ import Marquee from '../magicUI/Marquee';
 
 const projects = [
   {
-    name: "Proyecto 1",
-    body: "Mi primer Proyecto XD",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Administrador de torneos",
+    body: "App para gestionar torneos con MVC y scrum.",
   },
   {
-    name: "Proyecto 2",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "Proyecto 3",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Sistema de Gestión de Reclamos Administrativos",
+    body: "Sistema para registrar y gestionar reclamos.",
   },
 ];
 
 const works = [
   {
-    name: "Trabajo 1",
-    body: "Mi primer Proyecto XD",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Trabajo 2",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Desarrollador Full-Stack",
+    body: "Mi primer trabajo",
   },
 ];
 
 const firstRow = projects;
 const secondRow = works;
 
-const ReviewCard = ({ img, name, username, body }) => {
+const ReviewCard = ({ name, username, body }) => {
   return (
     <figure
       className={cn(
-        "relative h-40 w-[200px] cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-slate-400/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "relative h-40 w-full cursor-pointer overflow-hidden rounded-xl border p-4 transition-colors duration-200",
+        "border-slate-400/[.1] bg-slate-50 hover:bg-slate-100",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
       <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
@@ -60,9 +46,9 @@ const ReviewCard = ({ img, name, username, body }) => {
 
 export function MarqueeDemoVertical() {
   return (
-    <div className="absolute bottom-0 right-[50%] translate-x-[50%] translate-y-[-50%] flex h-[230px] w-3/4 flex-col items-center justify-center overflow-hidden rounded-lg border bg-background bg-slate-200">
-      <h3 className=' text-xl mb-4 text text-gray-800 w-full text-center'>Experiencia</h3>
-      <div className='w-full flex overflow-hidden'>
+    <div className="absolute top-0 right-[50%] translate-x-[50%] translate-y-[-41%] flex h-[190px] w-2/3 flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent">
+
+      <div className='w-full grid grid-cols-2 overflow-hidden'>
         <Marquee pauseOnHover vertical className="[--duration:25s]">
           {firstRow.map((review) => (
             <ReviewCard key={review.username} {...review} />

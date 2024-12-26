@@ -15,6 +15,7 @@ import springBoot from '../imagenes/iconos/springBoot.svg'
 import postgre from '../imagenes/iconos/postgreSQL.svg'
 import docker from '../imagenes/iconos/docker.svg'
 import hibernate from '../imagenes/iconos/hibernate.svg'
+import projects from '../imagenes/iconos/projects.svg'
 
 
 const Proyectos = () => {
@@ -32,59 +33,59 @@ const Proyectos = () => {
     // Variantes para cada posición
     const leftmostVariants = {
         initial: {
-            scale: 0.9,
+            scale: 0.7,
             x: 0,
         },
         hover: {
-            scale: 1,
-            x: -75,
-            transition: { duration: 0.3, delay: 0.4 }
+            scale: 0.9,
+            x: -35,
+            transition: { duration: 0.3, delay: 0.2 }
         },
     };
 
     const leftVariants = {
         initial: {
-            scale: 0.9,
+            scale: 0.7,
             x: 0,
         },
         hover: {
-            scale: 1,
-            x: -25,
+            scale: 0.9,
+            x: -35,
             transition: { duration: 0.3, delay: 0.2 }
         },
     };
 
     const centerVariants = {
         initial: {
-            scale: 0.9,
+            scale: 0.8
         },
         hover: {
-            scale: 1,
-            transition: { duration: 0.3, delay: 0 }
+            scale: 1.1,
+            transition: { duration: 0.3, delay: 0.1 }
         },
     };
 
     const rightVariants = {
         initial: {
-            scale: 0.9,
+            scale: 0.7,
             x: 0,
         },
         hover: {
-            scale: 1,
-            x: 50,
+            scale: 0.9,
+            x: 35,
             transition: { duration: 0.3, delay: 0.2 }
         },
     };
 
     const rightmostVariants = {
         initial: {
-            scale: 0.9,
+            scale: 0.7,
             x: 0,
         },
         hover: {
-            scale: 1,
-            x: 100,
-            transition: { duration: 0.3, delay: 0.4 }
+            scale: 0.9,
+            x: 35,
+            transition: { duration: 0.3, delay: 0.2 }
         },
     };
     return (
@@ -135,7 +136,7 @@ const Proyectos = () => {
             </div>
 
             <motion.div 
-            className="absolute bottom-[-70px] left-10 cursor-pointer w-[500px] drop-shadow-lg"
+            className="absolute bottom-[-70px] left-10 cursor-pointer w-[450px] drop-shadow-lg"
             onClick={() => navegacion("/proyectos")}
             initial={{ y: -1000, x: -1000 }}
             animate={{
@@ -162,11 +163,16 @@ const Proyectos = () => {
             }}
             >
                 <img src={folder} className='w-full ' />
+                <article className='absolute top-1/3 left-16 w-full h-full flex flex-col'>
+                    <img src={projects} className=' bg-slate-300 w-16 rounded-full p-2 mb-10'/>
+                    <h3 className=' text-3xl font-bold text-gray-800 w-full mb-1'>Experiencia</h3>
+                    <p className=' text-muted-foreground'>Ve un poco más de lo que puedo hacer.</p>
+                </article>
                 <MarqueeComponente/>
             </motion.div>
 
             <motion.div 
-            className="absolute bottom-[-70px] right-10 cursor-pointer w-[500px] drop-shadow-lg"
+            className="absolute bottom-[-70px] right-10 cursor-pointer w-[450px] drop-shadow-lg"
             onClick={() => navegacion("/habilidades")}
             initial={{ y: -1000, x: -1000 }} 
             animate={{
@@ -202,7 +208,7 @@ const Proyectos = () => {
                 <motion.img 
                     initial="initial"
                     animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-36 left-[16%]'
+                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-28 left-[26%]'
                     src={docker}
                     variants={leftmostVariants}
                 />
@@ -211,7 +217,7 @@ const Proyectos = () => {
                 <motion.img 
                     initial="initial"
                     animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-32 left-[26%]'
+                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-56 left-[26%]'
                     src={postgre}
                     variants={leftVariants}
                 />
@@ -220,7 +226,7 @@ const Proyectos = () => {
                 <motion.img 
                     initial="initial"
                     animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-28 left-[41%] z-30'
+                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-40 left-[39%] z-30'
                     src={java}
                     variants={centerVariants}
                 />
@@ -229,7 +235,7 @@ const Proyectos = () => {
                 <motion.img 
                     initial="initial"
                     animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-32 right-[26%] z-20'
+                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-28 right-[26%] z-20'
                     src={springBoot}
                     variants={rightVariants}
                 />
@@ -238,7 +244,7 @@ const Proyectos = () => {
                 <motion.img 
                     initial="initial"
                     animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-full shadow-md p-4 w-[22%] absolute top-36 right-[16%] z-10'
+                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-56 right-[26%] z-10'
                     src={hibernate}
                     variants={rightmostVariants}
                 />
