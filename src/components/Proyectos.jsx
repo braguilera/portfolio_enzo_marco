@@ -48,7 +48,7 @@ const ExperienciaYProyectos = () => {
       id: 1,
       position: 'Desarrollador Full-Stack',
       company: 'Quadrant',
-      description: 'Colaboré en el diseño y desarrollo de una aplicación web utilizando React y TypeScript, trabajando en un equipo ágil.',
+      description: '',
       date: 'Dicienbre 2024 - Actualidad'
     },
   ];
