@@ -16,6 +16,7 @@ import postgre from '../imagenes/iconos/postgreSQL.svg'
 import docker from '../imagenes/iconos/docker.svg'
 import hibernate from '../imagenes/iconos/hibernate.svg'
 import projects from '../imagenes/iconos/projects.svg'
+import skills from '../imagenes/iconos/skills.svg'
 
 
 const Proyectos = () => {
@@ -34,33 +35,39 @@ const Proyectos = () => {
     const leftmostVariants = {
         initial: {
             scale: 0.7,
-            x: 0,
+            y: 0,
+            rotate: -6,
         },
         hover: {
-            scale: 0.9,
-            x: -35,
-            transition: { duration: 0.3, delay: 0.2 }
+            scale: 0.8,
+            y: -15,
+            rotate: -10,
+            transition: { duration: 0.3, delay: 0.1 }
         },
     };
 
     const leftVariants = {
         initial: {
             scale: 0.7,
-            x: 0,
+            y: 0,
+            rotate: -4,
         },
         hover: {
             scale: 0.9,
-            x: -35,
-            transition: { duration: 0.3, delay: 0.2 }
+            y: -15,
+            rotate: -10,
+            transition: { duration: 0.3, delay: 0.1 }
         },
     };
 
     const centerVariants = {
         initial: {
-            scale: 0.8
+            scale: 0.8,
+            y:0,
         },
         hover: {
-            scale: 1.1,
+            scale: 1,
+            y: -15,
             transition: { duration: 0.3, delay: 0.1 }
         },
     };
@@ -68,24 +75,28 @@ const Proyectos = () => {
     const rightVariants = {
         initial: {
             scale: 0.7,
-            x: 0,
+            y: 0,
+            rotate: 8,
         },
         hover: {
             scale: 0.9,
-            x: 35,
-            transition: { duration: 0.3, delay: 0.2 }
+            y: -15,
+            rotate: 10,
+            transition: { duration: 0.3, delay: 0.1 }
         },
     };
 
     const rightmostVariants = {
         initial: {
             scale: 0.7,
-            x: 0,
+            y: 0,
+            rotate: 12,
         },
         hover: {
             scale: 0.9,
-            x: 35,
-            transition: { duration: 0.3, delay: 0.2 }
+            y: -15,
+            rotate: 10,
+            transition: { duration: 0.3, delay: 0.1 }
         },
     };
     return (
@@ -163,11 +174,12 @@ const Proyectos = () => {
             }}
             >
                 <img src={folder} className='w-full ' />
-                <article className='absolute top-1/3 left-16 w-full h-full flex flex-col'>
-                    <img src={projects} className=' bg-slate-300 w-16 rounded-full p-2 mb-10'/>
-                    <h3 className=' text-3xl font-bold text-gray-800 w-full mb-1'>Experiencia</h3>
-                    <p className=' text-muted-foreground'>Ve un poco más de lo que puedo hacer.</p>
+                <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
+                    <img src={projects} className='bg-slate-300 w-16 rounded-full p-2 mb-10' />
+                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Experiencia</h3>
+                    <p className='text-muted-foreground'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
                 </article>
+
                 <MarqueeComponente/>
             </motion.div>
 
@@ -198,56 +210,58 @@ const Proyectos = () => {
                 transition: { duration: 0.3, ease: "easeOut" },
             }}
             >
-                <h3 className='absolute bottom-[60%] text-xl mb-4 text text-gray-800 w-full text-center'>Conocimientos</h3>
+                <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
+                    <img src={skills} className='bg-slate-300 w-16 rounded-full p-2 mb-10' />
+                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Conocimientos</h3>
+                    <p className='text-muted-foreground'>Explora las herramientas y tecnologías que domino.</p>
+                </article>
+
                 <div 
                 className='w-full h-full absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/3'
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                {/* Extremo izquierdo */}
-                <motion.img 
-                    initial="initial"
-                    animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-28 left-[26%]'
-                    src={docker}
-                    variants={leftmostVariants}
-                />
+                    <div className='bg-slate-200 w-3/4 h-8 absolute z-50 top-10 ml-16 rounded-3xl'></div>
+                    <motion.img 
+                        initial="initial"
+                        animate={["floating", isHovered ? "hover" : "initial"]}
+                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 left-[16%]'
+                        src={docker}
+                        variants={leftmostVariants}
+                    />
+                    
+                    <motion.img 
+                        initial="initial"
+                        animate={["floating", isHovered ? "hover" : "initial"]}
+                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 left-[26%]'
+                        src={postgre}
+                        variants={leftVariants}
+                    />
+                    
+                    <motion.img 
+                        initial="initial"
+                        animate={["floating", isHovered ? "hover" : "initial"]}
+                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-10 left-[39%] z-30'
+                        src={java}
+                        variants={centerVariants}
+                    />
+                    
+                    <motion.img 
+                        initial="initial"
+                        animate={["floating", isHovered ? "hover" : "initial"]}
+                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 right-[26%] z-20'
+                        src={springBoot}
+                        variants={rightVariants}
+                    />
+                    
+                    <motion.img 
+                        initial="initial"
+                        animate={["floating", isHovered ? "hover" : "initial"]}
+                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 right-[16%] z-10'
+                        src={hibernate}
+                        variants={rightmostVariants}
+                    />
                 
-                {/* Izquierda adyacente al centro */}
-                <motion.img 
-                    initial="initial"
-                    animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-56 left-[26%]'
-                    src={postgre}
-                    variants={leftVariants}
-                />
-                
-                {/* Centro (Java) */}
-                <motion.img 
-                    initial="initial"
-                    animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-40 left-[39%] z-30'
-                    src={java}
-                    variants={centerVariants}
-                />
-                
-                {/* Derecha adyacente al centro */}
-                <motion.img 
-                    initial="initial"
-                    animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-28 right-[26%] z-20'
-                    src={springBoot}
-                    variants={rightVariants}
-                />
-                
-                {/* Extremo derecho */}
-                <motion.img 
-                    initial="initial"
-                    animate={["floating", isHovered ? "hover" : "initial"]}
-                    className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute top-56 right-[26%] z-10'
-                    src={hibernate}
-                    variants={rightmostVariants}
-                />
             </div>
                 <img src={folder} className='w-full' />
 

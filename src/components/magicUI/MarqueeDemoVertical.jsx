@@ -7,7 +7,7 @@ const projects = [
     body: "App para gestionar torneos con MVC y scrum.",
   },
   {
-    name: "Sistema de Gestión de Reclamos Administrativos",
+    name: "Gestor de Reclamos",
     body: "Sistema para registrar y gestionar reclamos.",
   },
 ];
@@ -15,7 +15,7 @@ const projects = [
 const works = [
   {
     name: "Desarrollador Full-Stack",
-    body: "Mi primer trabajo",
+    body: "Tabajando en Quadrant desde diciembre de 2024.",
   },
 ];
 
@@ -33,13 +33,13 @@ const ReviewCard = ({ name, username, body }) => {
     >
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
+          <figcaption className="text-sm font-medium text-yellow-500 dark:text-white">
             {name}
           </figcaption>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="m-0 text-sm">{body}</blockquote>
     </figure>
   );
 };
