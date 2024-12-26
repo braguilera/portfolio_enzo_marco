@@ -175,7 +175,7 @@ const Proyectos = () => {
             >
                 <img src={folder} className='w-full ' />
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
-                    <img src={projects} className='bg-slate-300 w-16 rounded-full p-2 mb-10' />
+                    <img src={projects} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
                     <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Experiencia</h3>
                     <p className='text-muted-foreground'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
                 </article>
@@ -211,7 +211,7 @@ const Proyectos = () => {
             }}
             >
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
-                    <img src={skills} className='bg-slate-300 w-16 rounded-full p-2 mb-10' />
+                    <img src={skills} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
                     <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Conocimientos</h3>
                     <p className='text-muted-foreground'>Explora las herramientas y tecnologías que domino.</p>
                 </article>
