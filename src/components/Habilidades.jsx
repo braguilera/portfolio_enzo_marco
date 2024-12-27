@@ -60,12 +60,12 @@ const Habilidades = () => {
   };
 
   const ProjectCard = ({ project }) => (
-    <div className="bg-neutral-800 rounded-lg p-6 mb-4 hover:bg-neutral-700 transition-colors">
+    <div className="bg-slate-300 dark:bg-neutral-800 rounded-lg p-6 mb-4 dark:hover:bg-neutral-700 hover:bg-slate-400 transition-colors duration-500 cursor-pointer">
       <div className="flex justify-between items-start mb-2">
-        <h3 className="text-xl font-bold text-neutral-100">{project.title}</h3>
-        <span className="text-sm text-neutral-400">{project.date}</span>
+        <h3 className="text-xl font-bold text-slate-800 dark:text-neutral-100">{project.title}</h3>
+        <span className="text-sm text-slate-500 dark:text-neutral-400">{project.date}</span>
       </div>
-      <p className="text-neutral-300 text-sm">{project.description}</p>
+      <p className="text-slate-600 dark:text-neutral-300 text-sm">{project.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.skills.map((skill, index) => (
           <span 
@@ -99,7 +99,7 @@ const Habilidades = () => {
         {skillsData.map((skill) => (
           <MagicCard
             key={skill.name}
-            className="cursor-pointer group h-32 flex flex-col items-center justify-center text-center p-4 hover:scale-105 hover:rotate-1 transition-all duration-200"
+            className="cursor-pointer group h-32 flex flex-col items-center justify-center text-center p-4 hover:scale-105 hover:rotate-1 transition-all duration-400"
             gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
             funcion={() => openModal(skill)}
           >
@@ -126,10 +126,10 @@ const Habilidades = () => {
                 className="w-12 h-12"
               />
               <div>
-                <h2 className="text-2xl font-bold text-neutral-100">
+                <h2 className="text-2xl font-bold text-gray-700 dark:text-neutral-100">
                   Proyectos con {selectedSkill.name}
                 </h2>
-                <p className="text-neutral-400">{selectedSkill.description}</p>
+                <p className="text-gray-600 dark:text-neutral-400">{selectedSkill.description}</p>
               </div>
             </div>
 
@@ -139,7 +139,7 @@ const Habilidades = () => {
                   <ProjectCard key={project.id} project={project} />
                 ))
               ) : (
-                <p className="text-center text-neutral-400">
+                <p className="text-center text-slate-700 dark:text-neutral-400">
                   No hay proyectos que utilicen {selectedSkill.name} por el momento.
                 </p>
               )}
