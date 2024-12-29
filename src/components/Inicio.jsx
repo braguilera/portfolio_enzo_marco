@@ -112,10 +112,10 @@ const Proyectos = () => {
                 text="Enzo Marco"
                 />
             </p>
-            <h2 className="z-10 text-4xl text-center text-muted-foreground font-light mb-8 ">
-                Ingeniero en Informática | Desarrollador Backend
+            <h2 className="z-10 px-4 text-4xl text-center text-muted-foreground font-light mb-8 flex flex-col md:flex-row">
+                Ingeniero en Informática <span className='hidden md:inline md:px-2'>|</span>  <span>Desarrollador Backend</span>
             </h2>
-            <p className="z-10 text-xl text-center text-muted-foreground mb-8">
+            <p className="z-10 px-4 text-xl text-center text-muted-foreground mb-8">
                 Transformando ideas en soluciones robustas y escalables
             </p>
             <div className="z-10 flex min-h-20 items-center justify-center">
@@ -127,7 +127,7 @@ const Proyectos = () => {
                 </ShimmerButton>
             </div>
 
-            <div className="absolute top-10 right-10 cursor-pointer">
+            <div className="absolute top-10 right-10 cursor-pointer z-10">
 
                 <motion.div 
                 className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200"
@@ -147,7 +147,7 @@ const Proyectos = () => {
             </div>
 
             <motion.div 
-            className="absolute bottom-[-70px] left-10 cursor-pointer w-[450px] drop-shadow-lg"
+            className="absolute bottom-[-70px] left-0 xl:left-20 cursor-pointer w-[400px] drop-shadow-lg z-50 2xl:w-[450px] hidden lg:block"
             onClick={() => navegacion("/proyectos")}
             initial={{ y: -1000, x: -1000 }}
             animate={{
@@ -177,14 +177,14 @@ const Proyectos = () => {
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
                     <img src={projects} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
                     <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Experiencia</h3>
-                    <p className='text-muted-foreground'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
+                    <p className='text-muted-foreground w-72 2xl:w-full'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
                 </article>
 
                 <MarqueeComponente/>
             </motion.div>
 
             <motion.div 
-            className="absolute bottom-[-70px] right-10 cursor-pointer w-[450px] drop-shadow-lg"
+            className="absolute bottom-[-70px] right-0 xl:right-20 cursor-pointer w-[400px] drop-shadow-lg z-50 2xl:w-[450px] hidden lg:block"
             onClick={() => navegacion("/habilidades")}
             initial={{ y: -1000, x: -1000 }} 
             animate={{
@@ -213,7 +213,7 @@ const Proyectos = () => {
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
                     <img src={skills} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
                     <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Conocimientos</h3>
-                    <p className='text-muted-foreground'>Explora las herramientas y tecnologías que domino.</p>
+                    <p className='text-muted-foreground w-72 2xl:w-full'>Explora las herramientas y tecnologías que domino.</p>
                 </article>
 
                 <div 

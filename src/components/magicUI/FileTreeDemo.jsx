@@ -44,7 +44,7 @@ export function FileTreeDemo({ seleccionado }) {
         className={`
           fixed top-0 left-0 
           transition-transform duration-300 ease-in-out
-          bg-white  rounded-lg
+          bg-white z-50 rounded-lg
           ${isMobile ? 'mt-16' : ''}
           ${isMobile && !isOpen ? '-translate-x-full' : 'translate-x-0'}
         `}
