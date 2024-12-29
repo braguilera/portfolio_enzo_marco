@@ -11,14 +11,14 @@ const SobreMi = () => {
 
   return (
     <>
-      <main className="flex flex-col items-center justify-start h-[100vh] w-full px-4">
+      <main className="flex flex-col items-center justify-start h-[100vh] w-full px-10 py-5">
         <FileTreeDemo seleccionado={{ folder: '8', file: '9' }} />
 
-        <section className="text-center mt-8">
+        <section className="text-center mt-8 ">
 
 
         <div className="grid place-content-center text-yellow-500">
-        <h1 className="max-w-7xl mx-auto text-center text-5xl leading-snug">
+        <h1 className="max-w-7xl mx-auto text-center text-3xl md:text-5xl md:max-w-xl xl:max-w-4xl lg:max-w-2xl leading-snug">
           Impulsando soluciones innovadoras y creando{" "}
           <span className="relative">
             Impacto
@@ -46,7 +46,7 @@ const SobreMi = () => {
 
         </section>
 
-        <section className=" mt-6 max-w-2xl">
+        <section className=" mt-6 max-w-2xl ">
           <p className="text-muted-foreground mt-2">Hola, soy</p>
           <h2 className="text-slate-900 text-4xl font-semibold">Enzo Marco</h2>
           <h3 className="text-muted-foreground font-light text-lg pb-2">Ingeniero de Software</h3>
@@ -69,7 +69,7 @@ const SobreMi = () => {
           </ShimmerButton>
         </footer>
 
-        <section className="w-full mt-12 flex flex-col items-center gap-6 px-6">
+        <section className="w-full mt-12 flex flex-col items-center gap-6 pb-20">
           <article className="bg-gray-100 rounded-xl p-4 text-center w-full max-w-md">
             <h3 className="font-bold">Ingeniería informática</h3>
             <p>Universidad Argentina de la Empresa (UADE)</p>
