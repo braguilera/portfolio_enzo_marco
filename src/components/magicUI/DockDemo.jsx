@@ -10,7 +10,7 @@ export function DockDemo() {
     const navegacion = useNavigate();
 
     return (
-        <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-10">
+        <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-50">
             <Dock direction="middle">
                 <DockIcon  onClick={() => navegacion("/")}>
                     <Icons.home className="size-10 box-border p-2 rounded-full hover:bg-gray-100 duration-300"/>

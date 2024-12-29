@@ -230,7 +230,7 @@ const File = forwardRef(
       isSelect,
       fileIcon,
       children,
-      onClick, // Agregar onClick desde props
+      onClick,
       ...props
     },
     ref
@@ -254,12 +254,11 @@ const File = forwardRef(
             isSelectable ? "cursor-pointer" : "opacity-50 cursor-not-allowed",
             className
           )}
-          // Combina ambos onClick
           onClick={(e) => {
-            selectItem(value); // Ejecuta la selección
+            selectItem(value);
             if (onClick) {
-              e.stopPropagation(); // Evita interferencia
-              onClick(e); // Ejecuta el onClick personalizado
+              e.stopPropagation();
+              onClick(e);
             }
           }}
         >

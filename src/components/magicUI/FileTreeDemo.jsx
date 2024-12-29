@@ -1,51 +1,91 @@
 import { useNavigate } from "react-router-dom";
 import { File, Folder, Tree } from "./FileTree";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
-// Componente principal
-export function FileTreeDemo({seleccionado}) {
-  const navigate = useNavigate(); // Hook llamado dentro del componente principal
+export function FileTreeDemo({ seleccionado }) {
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 900;
+      setIsMobile(mobile);
+      if (mobile) {
+        setIsOpen(false);
+      } else {
+        setIsOpen(true);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="absolute top-0 left-0 flex h-[400px] w-[180px] flex-col items-center justify-center overflow-hidden rounded-lg ">
-      <Tree
-        className="p-2 overflow-hidden rounded-md"
-        initialSelectedId={seleccionado.file} // ID de Home.jsx
-        initialExpandedItems={[seleccionado.folder]} // Expande "src" y "home"
-        elements={ELEMENTS}
+    <>
+      {isMobile && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md"
+          aria-label="Toggle navigation"
+        >
+          {isOpen ? (
+            <X className="size-6" />
+          ) : (
+            <Menu className="size-6" />
+          )}
+        </button>
+      )}
+
+      <div
+        className={`
+          fixed top-0 left-0 
+          transition-transform duration-300 ease-in-out
+          bg-white  rounded-lg
+          ${isMobile ? 'mt-16' : ''}
+          ${isMobile && !isOpen ? '-translate-x-full' : 'translate-x-0'}
+        `}
       >
-        {renderElements(ELEMENTS, navigate)}
-      </Tree>
-    </div>
+        <Tree
+          className="p-2 overflow-hidden rounded-md"
+          initialSelectedId={seleccionado.file}
+          initialExpandedItems={isMobile ? [] : [seleccionado.folder]}
+          elements={ELEMENTS}
+        >
+          {renderElements(ELEMENTS, navigate, () => isMobile && setIsOpen(false))}
+        </Tree>
+      </div>
+    </>
   );
 }
 
-// Renderiza elementos recursivamente
-function renderElements(elements, navigate) {
+function renderElements(elements, navigate, onNavigate) {
   return elements.map((element) => {
     if (element.children) {
-      // Si tiene hijos, renderiza como carpeta
       return (
         <Folder key={element.id} value={element.id} element={element.name}>
-          {renderElements(element.children, navigate)}
+          {renderElements(element.children, navigate, onNavigate)}
         </Folder>
       );
     }
-    // Si no tiene hijos, renderiza como archivo
     return (
       <File
         key={element.id}
         value={element.id}
-        onClick={() => navigate(`/${element.navegation}`)} // Redirección
+        onClick={() => {
+          navigate(`/${element.navegation}`);
+          onNavigate?.(); 
+        }}
       >
         <p>{element.name}</p>
       </File>
-
     );
   });
 }
 
-// Ejemplo de elementos con "home"
 const ELEMENTS = [
   {
     id: "1",

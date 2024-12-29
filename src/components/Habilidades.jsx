@@ -61,9 +61,9 @@ const Habilidades = () => {
 
   const ProjectCard = ({ project }) => (
     <div className="bg-slate-300 dark:bg-neutral-800 rounded-lg p-6 mb-4 dark:hover:bg-neutral-700 hover:bg-slate-400 transition-colors duration-500 cursor-pointer">
-      <div className="flex justify-between items-start mb-2">
+      <div className="flex flex-col sm:flex-row justify-between items-start mb-2">
         <h3 className="text-xl font-bold text-slate-800 dark:text-neutral-100">{project.title}</h3>
-        <span className="text-sm text-slate-500 dark:text-neutral-400">{project.date}</span>
+        <span className="text-sm w-52 text-start sm:text-end text-slate-500 dark:text-neutral-400">{project.date}</span>
       </div>
       <p className="text-slate-600 dark:text-neutral-300 text-sm">{project.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ const Habilidades = () => {
         <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
           Habilidades Técnicas
         </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-7xl mx-auto">
+        <p className="text-lg text-gray-600 dark:text-gray-300 w-2/3 2xl:max-w-7xl mx-auto">
           Desarrollador apasionado por crear soluciones robustas y escalables.
           Mi experiencia abarca desde el desarrollo de sistemas backend hasta
           la creación de experiencias de usuario intuitivas.
