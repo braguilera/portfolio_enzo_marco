@@ -130,7 +130,7 @@ const Proyectos = () => {
             <div className="absolute top-10 right-10 cursor-pointer z-10">
 
                 <motion.div 
-                className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200"
+                className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200 hidden sm:block"
                 onClick={() => navegacion("/sobre_mi")}
                 initial={{ rotate: 3 }}
                 animate={{ 
