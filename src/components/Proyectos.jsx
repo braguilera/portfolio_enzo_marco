@@ -59,15 +59,15 @@ const ExperienciaYProyectos = () => {
           <DockDemo/>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-20 bg-gray-50">
         <div className="mb-10 text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Experiencia</h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <h2 className="text-4xl font-bold tracking-tight  sm:text-5xl text-yellow-500">Experiencia</h2>
+          <p className="mt-4 text-lg text-gray-600 w-2/3 2xl:max-w-7xl mx-auto">
             En esta sección encontrarás mi experiencia laboral y proyectos destacados, que reflejan mis habilidades técnicas y capacidad para aportar valor a los equipos.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 ">
-          <div className='lg:border-r border-r-gray-200 lg:px-10'>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Experiencia laboral</h3>
+          <div className='lg:border-r lg:border-r-gray-200 lg:px-10 bg-slate-200 p-4 rounded-lg lg:bg-transparent'>
+            <h3 className="text-2xl font-semibold text-gray-600 mb-6">Laboral</h3>
             <div className="space-y-8">
               {experiencia.map((item) => (
                 <div key={item.id} className="flex flex-col border-b border-gray-200 pb-6">
@@ -81,8 +81,8 @@ const ExperienciaYProyectos = () => {
             </div>
           </div>
 
-          <div className='pr-10'>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Experiencia por proyectos</h3>
+          <div className='pr-10 pl-4 lg:pl-0'>
+            <h3 className="text-2xl font-semibold text-gray-600 mb-6">Proyectos</h3>
             <div className="space-y-10">
               {proyectos.map((post) => (
                 <article key={post.id} className="flex flex-col items-start justify-between group border-b border-gray-200 pb-6">
