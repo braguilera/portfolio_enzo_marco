@@ -130,7 +130,7 @@ const Proyectos = () => {
             <div className="absolute top-10 right-10 cursor-pointer z-10">
 
                 <motion.div 
-                className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[200px] transform transition-all duration-200 hidden sm:block"
+                className="relative bg-yellow-100 p-6 rounded shadow-lg max-w-[220px] transform transition-all duration-200 hidden sm:block"
                 onClick={() => navegacion("/sobre_mi")}
                 initial={{ rotate: 3 }}
                 animate={{ 
@@ -142,7 +142,7 @@ const Proyectos = () => {
                 >
                 <Pin isHovered={isAboutHovered}/>
                 <h3 className="text-gray-800 font-handwriting">Sobre mí</h3>
-                <p className="text-sm text-gray-600 mt-2 font-handwriting">Developer passionate about creating amazing experiences</p>
+                <p className="text-sm text-gray-600 mt-2 font-handwriting">Desarrollador apasionado en la creación de experiencias increibles!</p>
                 </motion.div>
             </div>
 
@@ -225,7 +225,7 @@ const Proyectos = () => {
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
-                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 left-[16%]'
+                        className='bg-slate-100 dark:bg-slate-200 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 left-[16%]'
                         src={docker}
                         variants={leftmostVariants}
                     />
@@ -233,7 +233,7 @@ const Proyectos = () => {
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
-                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 left-[26%]'
+                        className='bg-slate-100 dark:bg-slate-200 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 left-[26%]'
                         src={postgre}
                         variants={leftVariants}
                     />
@@ -241,7 +241,7 @@ const Proyectos = () => {
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
-                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-10 left-[39%] z-30'
+                        className='bg-slate-100 dark:bg-slate-200 rounded-2xl shadow-md p-4 w-[22%] absolute -top-10 left-[39%] z-30'
                         src={java}
                         variants={centerVariants}
                     />
@@ -249,7 +249,7 @@ const Proyectos = () => {
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
-                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 right-[26%] z-20'
+                        className='bg-slate-100 dark:bg-slate-200 rounded-2xl shadow-md p-4 w-[22%] absolute -top-8 right-[26%] z-20'
                         src={springBoot}
                         variants={rightVariants}
                     />
@@ -257,7 +257,7 @@ const Proyectos = () => {
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
-                        className='bg-slate-100 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 right-[16%] z-10'
+                        className='bg-slate-100 dark:bg-slate-200 rounded-2xl shadow-md p-4 w-[22%] absolute -top-6 right-[16%] z-10'
                         src={hibernate}
                         variants={rightmostVariants}
                     />
