@@ -1,5 +1,3 @@
-
-
 import React, {
   createContext,
   forwardRef,
@@ -116,7 +114,7 @@ const Tree = forwardRef(
         <div className={cn("size-full", className)}>
           <ScrollArea
             ref={ref}
-            className="h-full relative px-2"
+            className="h-full relative px-2 "
             dir={dir}
           >
             <AccordionPrimitive.Root
@@ -124,7 +122,7 @@ const Tree = forwardRef(
               type="multiple"
               defaultValue={expandedItems}
               value={expandedItems}
-              className="flex flex-col gap-1"
+              className="flex flex-col gap-1 "
               onValueChange={(value) =>
                 setExpandedItems((prev) => [...(prev ?? []), value[0]])
               }
@@ -149,7 +147,7 @@ const TreeIndicator = forwardRef(({ className, ...props }, ref) => {
       dir={direction}
       ref={ref}
       className={cn(
-        "h-full w-px bg-muted absolute left-1.5 rtl:right-1.5 py-3 rounded-md hover:bg-slate-300 duration-300 ease-in-out",
+        "h-full w-px bg-muted absolute left-1.5 rtl:right-1.5 dark:bg-gray-700 py-3 rounded-md  ",
         className
       )}
       {...props}
@@ -178,27 +176,27 @@ const Folder = forwardRef(
       <AccordionPrimitive.Item
         {...props}
         value={value}
-        className="relative overflow-hidden h-full "
+        className="relative overflow-hidden h-full"
       >
         <AccordionPrimitive.Trigger
           className={cn(
-            `flex items-center gap-1 text-sm rounded-md`,
+            `flex items-center gap-1 text-sm rounded-md  `,
             className,
             {
               "bg-muted rounded-md ": isSelect && isSelectable,
-              "cursor-pointer": isSelectable,
-              "cursor-not-allowed opacity-50": !isSelectable,
+              "cursor-pointer ": isSelectable,
+              "cursor-not-allowed opacity-50 ": !isSelectable,
             }
           )}
           disabled={!isSelectable}
           onClick={() => handleExpand(value)}
         >
           {expandedItems?.includes(value)
-            ? openIcon ?? <FolderOpenIcon className="size-4 " />
-            : closeIcon ?? <FolderIcon className="size-4" />}
+            ? openIcon ?? <FolderOpenIcon className="size-4 dark:stroke-white" />
+            : closeIcon ?? <FolderIcon className="size-4 dark:stroke-white" />}
           <span>{element}</span>
         </AccordionPrimitive.Trigger>
-        <AccordionPrimitive.Content className="text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down relative overflow-hidden h-full">
+        <AccordionPrimitive.Content className="text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down relative overflow-hidden h-full ">
           {element && indicator && <TreeIndicator aria-hidden="true" />}
           <AccordionPrimitive.Root
             dir={direction}
@@ -239,7 +237,7 @@ const File = forwardRef(
     const isSelected = isSelect ?? selectedId === value;
 
     return (
-      <AccordionPrimitive.Item value={value} className="relative">
+      <AccordionPrimitive.Item value={value} className="relative ">
         <AccordionPrimitive.Trigger
           ref={ref}
           {...props}
@@ -247,9 +245,9 @@ const File = forwardRef(
           disabled={!isSelectable}
           aria-label="File"
           className={cn(
-            "flex items-center gap-1 cursor-pointer text-sm pr-1 rtl:pl-1 rtl:pr-0 rounded-md duration-200 ease-in-out hover:bg-stone-100",
+            "flex items-center gap-1 cursor-pointer text-sm pr-1 rtl:pl-1 rtl:pr-0 rounded-md px-1 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300  ",
             {
-              "bg-muted": isSelected && isSelectable,
+              "bg-muted bg-gray-100 dark:bg-gray-800": isSelected && isSelectable,
             },
             isSelectable ? "cursor-pointer" : "opacity-50 cursor-not-allowed",
             className
@@ -262,7 +260,7 @@ const File = forwardRef(
             }
           }}
         >
-          {fileIcon ?? <FileIcon className="size-4 " />}
+          {fileIcon ?? <FileIcon className="size-4 dark:stroke-white" />}
           {children}
         </AccordionPrimitive.Trigger>
       </AccordionPrimitive.Item>

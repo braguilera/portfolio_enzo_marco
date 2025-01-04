@@ -80,7 +80,7 @@ const Habilidades = () => {
   );
 
   return (
-    <div className="min-h-screen w-full py-16 px-4">
+    <div className="min-h-screen w-full py-16 px-4 bg-background">
       <FileTreeDemo seleccionado={{folder:"6", file:"7"}}/>
       <DockDemo/>
 

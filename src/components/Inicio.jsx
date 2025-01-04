@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { cn } from "../lib/utils";
 import { DotPattern } from "./magicUI/DotPattern";
 import { HyperText } from './magicUI/HyperText';
 import { ShimmerButton } from './magicUI/ShimmerButton';
 import Pin from '../imagenes/iconos/Pin';
 import folder from '../imagenes/iconos/folder.svg'
+import folderDark from '../imagenes/iconos/folderDark.svg'
 import { motion, transform } from 'framer-motion';
 import MarqueeComponente from './magicUI/MarqueeDemoVertical'
 import { useNavigate } from 'react-router-dom';
@@ -17,12 +18,13 @@ import docker from '../imagenes/iconos/docker.svg'
 import hibernate from '../imagenes/iconos/hibernate.svg'
 import projects from '../imagenes/iconos/projects.svg'
 import skills from '../imagenes/iconos/skills.svg'
+import Contexto from '../contexto/Contexto';
 
 
 const Proyectos = () => {
     const [isAboutHovered, setIsAboutHovered] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-
+    const { darkMode } = useContext(Contexto);
 
     const navegacion = useNavigate();
 
@@ -30,8 +32,6 @@ const Proyectos = () => {
         alert("Cv descargado")
     }
 
-
-    // Variantes para cada posición
     const leftmostVariants = {
         initial: {
             scale: 0.7,
@@ -100,7 +100,7 @@ const Proyectos = () => {
         },
     };
     return (
-        <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+        <div className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl transition-all duration-300">
 
         <FileTreeDemo seleccionado={{folder:"2", file:"3"}}/>
 
@@ -173,11 +173,11 @@ const Proyectos = () => {
                 transition: { duration: 0.3, ease: "easeOut" }, 
             }}
             >
-                <img src={folder} className='w-full ' />
+                <img src={darkMode ? folderDark : folder} className='w-full ' />
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
-                    <img src={projects} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
-                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Experiencia</h3>
-                    <p className='text-muted-foreground w-72 2xl:w-full'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
+                    <img src={projects} className='bg-slate-300 dark:bg-slate-500 w-16 rounded-full p-2 mb-6 ' />
+                    <h3 className='text-3xl font-bold text-slate-600 dark:text-slate-200 w-full mb-1'>Experiencia</h3>
+                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
                 </article>
 
                 <MarqueeComponente/>
@@ -211,9 +211,9 @@ const Proyectos = () => {
             }}
             >
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
-                    <img src={skills} className='bg-slate-300 w-16 rounded-full p-2 mb-6' />
-                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1'>Conocimientos</h3>
-                    <p className='text-muted-foreground w-72 2xl:w-full'>Explora las herramientas y tecnologías que domino.</p>
+                    <img src={skills} className='bg-slate-300 dark:bg-slate-500 w-16 rounded-full p-2 mb-6 z-10' />
+                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1 dark:text-slate-200'>Conocimientos</h3>
+                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>Explora las herramientas y tecnologías que domino.</p>
                 </article>
 
                 <div 
@@ -221,7 +221,7 @@ const Proyectos = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                    <div className='bg-slate-200 w-3/4 h-8 absolute z-50 top-10 ml-16 rounded-3xl'></div>
+                    <div className='bg-slate-200 dark:bg-[#4a5566] w-3/4 h-8 absolute z-50 top-10 ml-16 rounded-3xl'></div>
                     <motion.img 
                         initial="initial"
                         animate={["floating", isHovered ? "hover" : "initial"]}
@@ -263,7 +263,7 @@ const Proyectos = () => {
                     />
                 
             </div>
-                <img src={folder} className='w-full' />
+                <img src={darkMode ? folderDark : folder} className='w-full' />
 
             </motion.div>
 

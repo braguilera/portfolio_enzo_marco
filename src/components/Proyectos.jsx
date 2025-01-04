@@ -54,10 +54,10 @@ const ExperienciaYProyectos = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-8 h-[100vh]">
+    <div className="bg-background py-8 h-[100vh]">
           <FileTreeDemo seleccionado={{folder:"4", file:"5"}}/>
           <DockDemo/>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-20 bg-gray-50">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-20 ">
         <div className="mb-10 text-center">
           <h2 className="text-4xl font-bold tracking-tight  sm:text-5xl text-yellow-500">Experiencia</h2>
           <p className="mt-4 text-lg text-gray-600 w-2/3 2xl:max-w-7xl mx-auto">

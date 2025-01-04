@@ -43,8 +43,8 @@ export function FileTreeDemo({ seleccionado }) {
       <div
         className={`
           fixed top-0 left-0 
-          transition-transform duration-300 ease-in-out
-          bg-white z-50 rounded-lg
+          transition-all duration-300
+          bg-background z-50 rounded-lg dark:text-white 
           ${isMobile ? 'mt-16' : ''}
           ${isMobile && !isOpen ? '-translate-x-full' : 'translate-x-0'}
         `}
