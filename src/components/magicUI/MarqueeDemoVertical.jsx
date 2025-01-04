@@ -39,7 +39,7 @@ const ReviewCard = ({ name, username, body }) => {
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
-      <blockquote className="m-0 text-sm">{body}</blockquote>
+      <blockquote className="m-0 text-sm dark:text-slate-400">{body}</blockquote>
     </figure>
   );
 };
