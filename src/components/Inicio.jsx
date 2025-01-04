@@ -108,7 +108,7 @@ const Proyectos = () => {
 
             <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
                 <HyperText
-                className="text-black dark:text-white text-6xl font-bold tracking-tighter mb-4"
+                className="text-yellow-500 text-6xl font-bold tracking-tighter mb-4"
                 text="Enzo Marco"
                 />
             </p>

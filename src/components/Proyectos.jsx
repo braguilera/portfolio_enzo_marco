@@ -60,63 +60,63 @@ const ExperienciaYProyectos = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-20 ">
         <div className="mb-10 text-center">
           <h2 className="text-4xl font-bold tracking-tight  sm:text-5xl text-yellow-500">Experiencia</h2>
-          <p className="mt-4 text-lg text-gray-600 w-2/3 2xl:max-w-7xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 w-2/3 2xl:max-w-7xl mx-auto">
             En esta sección encontrarás mi experiencia laboral y proyectos destacados, que reflejan mis habilidades técnicas y capacidad para aportar valor a los equipos.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 ">
           <div className='lg:border-r lg:border-r-gray-200 lg:px-10 bg-slate-200 p-4 rounded-lg lg:bg-transparent'>
-            <h3 className="text-2xl font-semibold text-gray-600 mb-6">Laboral</h3>
+            <h3 className="text-2xl font-semibold text-gray-600 mb-6 dark:text-gray-100">Laboral</h3>
             <div className="space-y-8">
               {experiencia.map((item) => (
                 <div key={item.id} className="flex flex-col border-b border-gray-200 pb-6">
-                  <p className="mt-1 text-sm text-gray-500">{item.date}</p>
-                  <h4 className="text-lg font-medium text-gray-900">
-                    {item.position} - <span className="text-gray-700">{item.company}</span>
+                  <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{item.date}</p>
+                  <h4 className="text-lg font-medium text-gray-900 dark:text-gray-300">
+                    {item.position} - <span className="text-gray-700 dark:text-gray-300">{item.company}</span>
                   </h4>
-                  <p className="mt-2 text-gray-600">{item.description}</p>
+                  <p className="mt-2 text-gray-600 ">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className='pr-10 pl-4 lg:pl-0'>
-            <h3 className="text-2xl font-semibold text-gray-600 mb-6">Proyectos</h3>
+            <h3 className="text-2xl font-semibold text-gray-600 mb-6 dark:text-gray-100">Proyectos</h3>
             <div className="space-y-10">
               {proyectos.map((post) => (
                 <article key={post.id} className="flex flex-col items-start justify-between group border-b border-gray-200 pb-6">
                   <div className="flex items-center gap-x-4 text-xs ">
-                    <time dateTime={post.datetime} className="text-gray-500">
+                    <time dateTime={post.datetime} className="text-gray-500 dark:text-gray-400">
                       {post.date}
                     </time>
                     <a
                       href={post.links.href}
-                      className="relative z-10 rounded-full bg-gray-100 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-200 transition-all duration-300"
+                      className="relative z-10 rounded-full bg-gray-100 dark:bg-gray-600 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-200 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-500 transition-all duration-300"
                     >
                       {post.links.title}
                     </a>
                   </div>
                   <div className="relative">
-                    <h3 className="text-lg font-semibold text-gray-900 hover:text-gray-500 transition-all duration-300">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-500 transition-all duration-300">
                       <a href={post.href}>
                         <span className="absolute inset-0" />
                         {post.title}
                       </a>
                     </h3>
-                    <p className="mt-5 text-sm text-gray-600 line-clamp-3">{post.description}</p>
+                    <p className="mt-5 text-sm text-gray-600 line-clamp-3 dark:text-gray-300">{post.description}</p>
                   </div>
                   <div className="mt-8 w-full">
-                    <h4 className="text-sm font-medium text-gray-900">Tecnologías utilizadas:</h4>
+                    <h4 className="text-sm font-medium text-gray-900 dark:text-gray-400">Tecnologías utilizadas:</h4>
                     <div className="grid grid-cols-5 gap-2">
                       {post.skills.map((skill, index) => (
                         <div
                           key={index}
-                          className="flex flex-col items-center p-2 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 select-none"
+                          className="flex flex-col items-center p-2 rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 transition-all duration-300 select-none"
                         >
                           <img src={skill.icon}></img>
-                          <span className="text-xs font-medium text-gray-600">{skill.name}</span>
-                          <span className="text-[10px] text-gray-400">{skill.type}</span>
+                          <span className="text-xs font-medium text-gray-600  dark:text-gray-300">{skill.name}</span>
+                          <span className="text-[10px] text-gray-400 dark:text-gray-400">{skill.type}</span>
                         </div>
                       ))}
                     </div>

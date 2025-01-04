@@ -80,12 +80,12 @@ const Habilidades = () => {
   );
 
   return (
-    <div className="min-h-screen w-full py-16 px-4 bg-background">
+    <div className="min-h-screen w-full py-16 px-4 bg-background transition-all duration-300">
       <FileTreeDemo seleccionado={{folder:"6", file:"7"}}/>
       <DockDemo/>
 
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+        <h2 className="text-4xl font-bold mb-4 text-yellow-500">
           Habilidades Técnicas
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 w-2/3 2xl:max-w-7xl mx-auto">

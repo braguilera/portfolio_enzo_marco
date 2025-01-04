@@ -54,20 +54,19 @@ export function HyperText({
       }
     }, duration / (text.length * 10));
 
-    // Clean up interval on unmount
     return () => clearInterval(interval);
   }, [text, duration, trigger, animateOnLoad]);
 
   return (
     <div
-      className="flex scale-100 cursor-default py-2"
+      className="flex scale-100 cursor-default py-2 "
       onMouseEnter={triggerAnimation}
     >
       <AnimatePresence mode="wait">
         {displayText.map((letter, i) => (
           <motion.span
             key={i}
-            className={cn("font-mono", letter === " " ? "w-3" : "", className)}
+            className={cn("font-mono  ", letter === " " ? "w-3" : "", className)}
             {...framerProps}
           >
             {letter.toUpperCase()}

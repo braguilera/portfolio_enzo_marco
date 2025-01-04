@@ -33,7 +33,7 @@ const ReviewCard = ({ name, username, body }) => {
     >
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
-          <figcaption className="text-sm 2xl:text-base font-medium text-yellow-500 dark:text-white">
+          <figcaption className="text-sm 2xl:text-base font-medium text-yellow-500">
             {name}
           </figcaption>
           <p className="text-xs font-medium dark:text-white/40">{username}</p>
