@@ -29,13 +29,13 @@ export function FileTreeDemo({ seleccionado }) {
       {isMobile && (
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="fixed top-4 left-4 z-50 p-2 bg-white rounded-md"
+          className="fixed top-4 left-4 z-50 p-2 bg-background rounded-md"
           aria-label="Toggle navigation"
         >
           {isOpen ? (
-            <X className="size-6" />
+            <X className="size-6 dark:stroke-white" />
           ) : (
-            <Menu className="size-6" />
+            <Menu className="size-6 dark:stroke-white" />
           )}
         </button>
       )}
