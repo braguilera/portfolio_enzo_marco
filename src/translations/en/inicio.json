@@ -1,7 +1,7 @@
 {
     "header": {
-        "name": "Enzo Marco",
-        "role": "Software Engineer | Backend Developer",
+        "role1": "Software Engineer",
+        "role2": "Backend Developer",
         "tagline": "Turning ideas into robust and scalable solutions"
     },
     "buttons": {

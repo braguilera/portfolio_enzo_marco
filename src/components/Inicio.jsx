@@ -114,7 +114,7 @@ const Proyectos = () => {
                 />
             </p>
             <h2 className="z-10 px-4 text-4xl text-center text-muted-foreground font-light mb-8 flex flex-col md:flex-row">
-                Ingeniero en Informática <span className='hidden md:inline md:px-2'>|</span>  <span>Desarrollador Backend</span>
+                {t("header.role1")} <span className='hidden md:inline md:px-2'> | </span>  <span>{t("header.role2")}</span>
             </h2>
             <p className="z-10 px-4 text-xl text-center text-muted-foreground mb-8">
                 {t("header.tagline")}
@@ -123,7 +123,7 @@ const Proyectos = () => {
             <div className="z-10 flex min-h-20 items-center justify-center">
                 <ShimmerButton className="shadow-2xl" funcion={Alerta}>
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
-                    Descargar CV
+                    {t("buttons.downloadCv")}
                     </span>
                 </ShimmerButton>
             </div>
@@ -142,8 +142,8 @@ const Proyectos = () => {
                 onHoverEnd={() => setIsAboutHovered(false)}
                 >
                 <Pin isHovered={isAboutHovered}/>
-                <h3 className="text-gray-800 font-handwriting">Sobre mí</h3>
-                <p className="text-sm text-gray-600 mt-2 font-handwriting">Desarrollador apasionado en la creación de experiencias increibles!</p>
+                <h3 className="text-gray-800 font-handwriting">{t("aboutMe.title")}</h3>
+                <p className="text-sm text-gray-600 mt-2 font-handwriting">{t("aboutMe.description")}</p>
                 </motion.div>
             </div>
 
@@ -177,8 +177,8 @@ const Proyectos = () => {
                 <img src={darkMode ? folderDark : folder} className='w-full ' />
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
                     <img src={projects} className='bg-slate-300 dark:bg-slate-500 w-16 rounded-full p-2 mb-6 ' />
-                    <h3 className='text-3xl font-bold text-slate-600 dark:text-slate-200 w-full mb-1'>Experiencia</h3>
-                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>Descubre cómo he aplicado mis habilidades en proyectos reales.</p>
+                    <h3 className='text-3xl font-bold text-slate-600 dark:text-slate-200 w-full mb-1'>{t("projects.title")}</h3>
+                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>{t("projects.description")}</p>
                 </article>
 
                 <MarqueeComponente/>
@@ -213,8 +213,8 @@ const Proyectos = () => {
             >
                 <article className='absolute top-1/3 left-16 w-80 h-full flex flex-col'>
                     <img src={skills} className='bg-slate-300 dark:bg-slate-500 w-16 rounded-full p-2 mb-6 z-10' />
-                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1 dark:text-slate-200'>Conocimientos</h3>
-                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>Explora las herramientas y tecnologías que domino.</p>
+                    <h3 className='text-3xl font-bold text-slate-600 w-full mb-1 dark:text-slate-200'>{t("skills.title")}</h3>
+                    <p className='text-muted-foreground w-72 2xl:w-full dark:text-slate-400'>{t("skills.description")}</p>
                 </article>
 
                 <div 

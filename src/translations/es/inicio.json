@@ -1,7 +1,7 @@
 {
     "header": {
-        "name": "Enzo Marco",
-        "role": "Ingeniero en Informática | Desarrollador Backend",
+        "role1": "Ingeniero en Informática",
+        "role2": "Desarrollador Backend",
         "tagline": "Transformando ideas en soluciones robustas y escalables"
     },
     "buttons": {
