@@ -71,7 +71,7 @@ export function DockDemo() {
       onClick={() => (setIsEnglish(!isEnglish), (isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 bg-white transition-all duration-300 flex items-center justify-center group overflow-hidden"
+      className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 flex items-center justify-center group overflow-hidden"
       aria-label="Change language"
     >
       {/* Contenedor central del texto */}
@@ -83,7 +83,7 @@ export function DockDemo() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute text-lg font-semibold text-gray-700 group-hover:text-yellow-600"
+            className="absolute text-lg font-semibold text-black dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400"
           >
             {isEnglish ? 'EN' : 'ES'}
           </motion.span>
