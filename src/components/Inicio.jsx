@@ -19,12 +19,13 @@ import hibernate from '../imagenes/iconos/hibernate.svg'
 import projects from '../imagenes/iconos/projects.svg'
 import skills from '../imagenes/iconos/skills.svg'
 import Contexto from '../contexto/Contexto';
-
+import {useTranslation} from "react-i18next"
 
 const Proyectos = () => {
     const [isAboutHovered, setIsAboutHovered] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const { darkMode } = useContext(Contexto);
+    const [t] = useTranslation("inicio");
 
     const navegacion = useNavigate();
 
@@ -116,10 +117,10 @@ const Proyectos = () => {
                 Ingeniero en Informática <span className='hidden md:inline md:px-2'>|</span>  <span>Desarrollador Backend</span>
             </h2>
             <p className="z-10 px-4 text-xl text-center text-muted-foreground mb-8">
-                Transformando ideas en soluciones robustas y escalables
+                {t("header.tagline")}
             </p>
-            <div className="z-10 flex min-h-20 items-center justify-center">
 
+            <div className="z-10 flex min-h-20 items-center justify-center">
                 <ShimmerButton className="shadow-2xl" funcion={Alerta}>
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     Descargar CV

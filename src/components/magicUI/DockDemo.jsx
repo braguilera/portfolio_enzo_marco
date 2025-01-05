@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
-
+import React, { useContext, useState } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 import { Dock, DockIcon } from "./Dock";
 import { Separator } from "../ui/Separator";
 import { useNavigate } from "react-router-dom";
 import Contexto from "../../contexto/Contexto";
+import { useTranslation } from "react-i18next";
 
 
 export function DockDemo() {
     const navegacion = useNavigate();
     const {darkMode, setDarkMode} = useContext(Contexto);
+    const [isEnglish, setIsEnglish] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [t, i18n] = useTranslation("inicio");
 
     const Icons = {
       github: (props) => (
@@ -62,9 +66,45 @@ export function DockDemo() {
     return (
       <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-50">
       <Dock direction="middle">
-        <DockIcon onClick={() => navegacion("/")}>
-          <Icons.home className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300"/>
-        </DockIcon>
+        
+      <button
+      onClick={() => (setIsEnglish(!isEnglish), (isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 bg-white transition-all duration-300 flex items-center justify-center group overflow-hidden"
+      aria-label="Change language"
+    >
+      {/* Contenedor central del texto */}
+      <div className="relative w-6 h-6 flex items-center justify-center">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={isEnglish ? 'en' : 'es'}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="absolute text-lg font-semibold text-gray-700 group-hover:text-yellow-600"
+          >
+            {isEnglish ? 'EN' : 'ES'}
+          </motion.span>
+        </AnimatePresence>
+      </div>
+      
+      {/* Tooltip */}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 5 }}
+            className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap"
+          >
+            {isEnglish ? 'Change to Spanish' : 'Cambiar a Inglés'}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </button>
+
         <Separator className="h-full py-2"></Separator>
         <DockIcon>
           <Icons.wsp className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
