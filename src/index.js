@@ -20,6 +20,9 @@ import sobreMi_en from "./translations/en/sobreMi.json"
 import proyectos_es from "./translations/es/proyectos.json"
 import proyectos_en from "./translations/en/proyectos.json"
 
+import habilidades_es from "./translations/es/habilidades.json"
+import habilidades_en from "./translations/en/habilidades.json"
+
 i18next.init({
     interpolation: { escapeValue: false },
     lng:"es",
@@ -28,13 +31,15 @@ i18next.init({
             inicio: inicio_es,
             marquee: marquee_es,
             sobreMi: sobreMi_es,
-            proyectos: proyectos_es
+            proyectos: proyectos_es,
+            habilidades: habilidades_es
         },
         en: {
             inicio: inicio_en,
             marquee: marquee_en,
             sobreMi: sobreMi_en,
-            proyectos: proyectos_en
+            proyectos: proyectos_en,
+            habilidades: habilidades_en
         },
     },
 });

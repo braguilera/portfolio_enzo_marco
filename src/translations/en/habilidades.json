@@ -1,6 +1,8 @@
 {
     "mainTitle": "Technical Skills",
     "mainSubtitle": "Passionate developer focused on creating robust and scalable solutions. My experience ranges from backend system development to creating intuitive user experiences.",
+    "modalTitle":"Projects with ",
+    "noProjects":"No projects available at the moment.",
     "skills": [
       { "name": "JAVA", "icon": "java", "description": "Backend Development" },
       { "name": "Spring Boot", "icon": "springBoot", "description": "API Development" },

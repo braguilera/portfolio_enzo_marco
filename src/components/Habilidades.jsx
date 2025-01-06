@@ -3,48 +3,52 @@ import { MagicCard } from "./magicUI/MagicCard";
 import { useTheme } from "next-themes";
 import { FileTreeDemo } from './magicUI/FileTreeDemo'
 import { DockDemo } from './magicUI/DockDemo';
-import java from '../imagenes/iconos/java.svg'
-import springBoot from '../imagenes/iconos/springBoot.svg'
-import angular from '../imagenes/iconos/angular.svg'
-import postgre from '../imagenes/iconos/postgreSQL.svg'
-import github from '../imagenes/iconos/github.svg'
-import docker from '../imagenes/iconos/docker.svg'
-import ingles from '../imagenes/iconos/ingles.svg'
-import hibernate from '../imagenes/iconos/hibernate.svg'
-import postman from '../imagenes/iconos/postman.svg'
-import DragCloseDrawer from './magicUI/DragCloseDrawer'
+import DragCloseDrawer from './magicUI/DragCloseDrawer';
+import { useTranslation } from "react-i18next";
+
+import java from '../imagenes/iconos/java.svg';
+import springBoot from '../imagenes/iconos/springBoot.svg';
+import angular from '../imagenes/iconos/angular.svg';
+import postgre from '../imagenes/iconos/postgreSQL.svg';
+import github from '../imagenes/iconos/github.svg';
+import docker from '../imagenes/iconos/docker.svg';
+import ingles from '../imagenes/iconos/ingles.svg';
+import hibernate from '../imagenes/iconos/hibernate.svg';
+import postman from '../imagenes/iconos/postman.svg';
 
 const skillsData = [
-  { name: 'JAVA', icon: java, description: 'Desarrollo Backend' },
-  { name: 'Spring Boot', icon: springBoot, description: 'Desarrollo de APIs' },
-  { name: 'Angular', icon: angular, description: 'Desarrollo de UI Moderno' },
-  { name: 'Postgre SQL', icon: postgre, description: 'Gestión de Datos' },
-  { name: 'GitHub', icon: github, description: 'Control de Versiones' },
-  { name: 'Docker', icon: docker , description: 'Containerización' },
-  { name: 'Inglés', icon: ingles, description: 'Profesional' },
-  { name: 'Hibernate', icon: hibernate, description: 'Mapeo O/R' },
-  { name: 'Postman', icon: postman, description: 'Testing de APIs' },
+  { id: 'JAVA', name: 'skills.0.name', icon: java, description: 'skills.0.description', title:"modalTitle" },
+  { id: 'Spring Boot', name: 'skills.1.name', icon: springBoot, description: 'skills.1.description', title:"modalTitle" },
+  { id: 'angular', name: 'skills.2.name', icon: angular, description: 'skills.2.description' , title:"modalTitle"},
+  { id: 'Postgre SQL', name: 'skills.3.name', icon: postgre, description: 'skills.3.description' , title:"modalTitle"},
+  { id: 'github', name: 'skills.4.name', icon: github, description: 'skills.4.description' , title:"modalTitle"},
+  { id: 'docker', name: 'skills.5.name', icon: docker, description: 'skills.5.description' , title:"modalTitle"},
+  { id: 'ingles', name: 'skills.6.name', icon: ingles, description: 'skills.6.description' , title:"modalTitle"},
+  { id: 'hibernate', name: 'skills.7.name', icon: hibernate, description: 'skills.7.description' , title:"modalTitle"},
+  { id: 'postman', name: 'skills.8.name', icon: postman, description: 'skills.8.description' , title:"modalTitle"},
 ];
+
 
 const proyectos = [
   {
     id: 1,
-    title: 'Administrador de torneos',
-    description: 'Dirigí el desarrollo de una aplicación dentro de un equipo de 4 personas, empleamos scrum como marco de trabajo y optamos por el modelo de diseño MVC para nuestra gestor.',
-    date: 'Abril 2024 - Julio 2024',
+    title: 'projects.0.title',
+    description: 'projects.0.description',
+    date: 'projects.0.date',
     skills: ['JAVA', 'Spring Boot', 'Postgre SQL', 'React']
   },
   {
     id: 2,
-    title: 'Sistema de Gestión de Reclamos Administrativos',
-    description: 'En conjunto con un compañero, desarrollamos un sistema para un consorcio que permita generar reclamos y almacenar información relacionada.',
-    date: 'Agosto 2024 - Actualidad',
+    title: 'projects.1.title',
+    description: 'projects.1.description',
+    date: 'projects.1.date',
     skills: ['JAVA', 'Spring Boot', 'Postgre SQL']
   }
 ];
 
 const Habilidades = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation("habilidades");
   const [open, setOpen] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState(null);
 
@@ -52,20 +56,21 @@ const Habilidades = () => {
     setSelectedSkill(skill);
     setOpen(true);
   };
-
-  const getProjectsBySkill = (skillName) => {
-    return proyectos.filter(proyecto => 
-      proyecto.skills.includes(skillName)
+  
+  const getProjectsBySkill = (skillId) => {
+    return proyectos.filter(proyecto =>
+      proyecto.skills.includes(skillId)
     );
   };
+  
 
   const ProjectCard = ({ project }) => (
     <div className="bg-slate-300 dark:bg-neutral-800 rounded-lg p-6 mb-4 dark:hover:bg-neutral-700 hover:bg-slate-400 transition-colors duration-500 cursor-pointer">
       <div className="flex flex-col sm:flex-row justify-between items-start mb-2">
-        <h3 className="text-xl font-bold text-slate-800 dark:text-neutral-100">{project.title}</h3>
-        <span className="text-sm w-52 text-start sm:text-end text-slate-500 dark:text-neutral-400">{project.date}</span>
+        <h3 className="text-xl font-bold text-slate-800 dark:text-neutral-100">{t(project.title)}</h3>
+        <span className="text-sm w-52 text-start sm:text-end text-slate-500 dark:text-neutral-400">{t(project.date)}</span>
       </div>
-      <p className="text-slate-600 dark:text-neutral-300 text-sm">{project.description}</p>
+      <p className="text-slate-600 dark:text-neutral-300 text-sm">{t(project.description)}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.skills.map((skill, index) => (
           <span 
@@ -86,12 +91,10 @@ const Habilidades = () => {
 
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4 text-yellow-500">
-          Habilidades Técnicas
+          {t('mainTitle')}
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 w-2/3 2xl:max-w-7xl mx-auto">
-          Desarrollador apasionado por crear soluciones robustas y escalables.
-          Mi experiencia abarca desde el desarrollo de sistemas backend hasta
-          la creación de experiencias de usuario intuitivas.
+          {t('mainSubtitle')}
         </p>
       </div>
 
@@ -106,10 +109,10 @@ const Habilidades = () => {
             <div className="flex flex-col items-center space-y-3">
               <img src={skill.icon} alt={skill.name} />
               <span className="font-medium transition-colors duration-300 group-hover:text-yellow-500">
-                {skill.name}
+              {t(skill.name)}
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {skill.description}
+                {t(skill.description)}
               </span>
             </div>
           </MagicCard>
@@ -127,22 +130,23 @@ const Habilidades = () => {
               />
               <div>
                 <h2 className="text-2xl font-bold text-gray-700 dark:text-neutral-100">
-                  Proyectos con {selectedSkill.name}
+                {t(selectedSkill.title)} {t(selectedSkill.name)}
                 </h2>
-                <p className="text-gray-600 dark:text-neutral-400">{selectedSkill.description}</p>
+                <p className="text-gray-600 dark:text-neutral-400">{t(selectedSkill.description)}</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              {getProjectsBySkill(selectedSkill.name).length > 0 ? (
-                getProjectsBySkill(selectedSkill.name).map(project => (
+            {getProjectsBySkill(selectedSkill.id).length > 0 ? (
+                getProjectsBySkill(selectedSkill.id).map(project => (
                   <ProjectCard key={project.id} project={project} />
                 ))
               ) : (
                 <p className="text-center text-slate-700 dark:text-neutral-400">
-                  No hay proyectos que utilicen {selectedSkill.name} por el momento.
+                  {t('noProjects', { skill: t(selectedSkill.name) })}
                 </p>
               )}
+
             </div>
           </div>
         )}

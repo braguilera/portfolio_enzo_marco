@@ -57,7 +57,7 @@ const ExperienciaYProyectos = () => {
               {projects.map((post, index) => (
                 <article key={index} className="flex flex-col items-start justify-between group border-b border-gray-200 pb-6">
                   <div className="flex items-center gap-x-4 text-xs">
-                    <small className="text-gray-500 dark:text-gray-400">{post.date}</small>
+                    <p className="text-gray-500 dark:text-gray-400">{post.date}</p>
                     <a
                       href={post.repositoryLink.href}
                       className="relative z-10 rounded-full bg-gray-100 dark:bg-gray-600 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-200 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-500 transition-all duration-300"
