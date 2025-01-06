@@ -1,26 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { cn } from '../../lib/utils';
 import Marquee from '../magicUI/Marquee';
 
-const projects = [
-  {
-    name: "Administrador de torneos",
-    body: "App para gestionar torneos con MVC y scrum.",
-  },
-  {
-    name: "Gestor de Reclamos",
-    body: "Sistema para registrar y gestionar reclamos.",
-  },
-];
 
-const works = [
-  {
-    name: "Desarrollador Full-Stack",
-    body: "Tabajando en Quadrant desde diciembre de 2024.",
-  },
-];
-
-const firstRow = projects;
-const secondRow = works;
 
 const ReviewCard = ({ name, username, body }) => {
   return (
@@ -36,7 +18,6 @@ const ReviewCard = ({ name, username, body }) => {
           <figcaption className="text-sm 2xl:text-base font-medium text-yellow-500">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
       <blockquote className="m-0 text-sm dark:text-slate-400">{body}</blockquote>
@@ -45,18 +26,23 @@ const ReviewCard = ({ name, username, body }) => {
 };
 
 export function MarqueeDemoVertical() {
+  const { t } = useTranslation("marquee");
+
+  const projects = t("projects", { returnObjects: true });
+  const works = t("works", { returnObjects: true });
+
   return (
     <div className="absolute -top-3 2xl:top-0 right-[50%] translate-x-[50%] translate-y-[-41%] flex h-[190px] w-2/3 flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent">
 
       <div className='w-full grid grid-cols-2 overflow-hidden'>
         <Marquee pauseOnHover vertical className="[--duration:25s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+          {projects.map((project, index) => (
+            <ReviewCard key={index} name={project.name} body={project.body} />
           ))}
         </Marquee>
         <Marquee reverse pauseOnHover vertical className="[--duration:25s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
+          {works.map((work, index) => (
+            <ReviewCard key={index} name={work.name} body={work.body} />
           ))}
         </Marquee>
       </div>

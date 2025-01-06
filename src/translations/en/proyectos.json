@@ -25,10 +25,10 @@
             "title": "Repository"
           },
           "technologies": [
-            { "name": "Java", "type": "Backend" },
-            { "name": "Spring Boot", "type": "Framework" },
-            { "name": "Postgre SQL", "type": "Database" },
-            { "name": "React", "type": "Frontend" }
+            { "name": "Java", "type": "Backend", "icon":"java" },
+            { "name": "Spring Boot", "type": "Framework", "icon":"springBoot" },
+            { "name": "Postgre SQL", "type": "Database","icon":"postgre" },
+            { "name": "React", "type": "Frontend",  "icon":"react" }
           ]
         },
         {
@@ -40,9 +40,9 @@
             "title": "Repository"
           },
           "technologies": [
-            { "name": "Java", "type": "Backend" },
-            { "name": "Spring Boot", "type": "Framework" },
-            { "name": "Postgre SQL", "type": "Database" }
+            { "name": "Java", "type": "Backend", "icon":"java" },
+            { "name": "Spring Boot", "type": "Framework", "icon":"springBoot" },
+            { "name": "Postgre SQL", "type": "Database", "icon":"postgre" }
           ]
         }
       ]

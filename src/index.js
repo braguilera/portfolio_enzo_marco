@@ -11,15 +11,30 @@ import i18next from 'i18next';
 import inicio_es from "./translations/es/inicio.json"
 import inicio_en from "./translations/en/inicio.json"
 
+import marquee_es from "./translations/es/marquee.json"
+import marquee_en from "./translations/en/marquee.json"
+
+import sobreMi_es from "./translations/es/sobreMi.json"
+import sobreMi_en from "./translations/en/sobreMi.json"
+
+import proyectos_es from "./translations/es/proyectos.json"
+import proyectos_en from "./translations/en/proyectos.json"
+
 i18next.init({
     interpolation: { escapeValue: false },
     lng:"es",
     resources: {
         es: {
-            inicio: inicio_es
+            inicio: inicio_es,
+            marquee: marquee_es,
+            sobreMi: sobreMi_es,
+            proyectos: proyectos_es
         },
         en: {
-            inicio: inicio_en
+            inicio: inicio_en,
+            marquee: marquee_en,
+            sobreMi: sobreMi_en,
+            proyectos: proyectos_en
         },
     },
 });
