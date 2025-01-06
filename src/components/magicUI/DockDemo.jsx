@@ -11,7 +11,6 @@ export function DockDemo() {
     const navegacion = useNavigate();
     const {darkMode, setDarkMode} = useContext(Contexto);
     const [isEnglish, setIsEnglish] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
     const [t, i18n] = useTranslation("inicio");
 
     const Icons = {
@@ -45,16 +44,16 @@ export function DockDemo() {
       <path fill={darkMode ? "white" : "currentColor"} d="M12.001 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.95 9.95 0 0 1-5.03-1.355L2.005 22l1.352-4.968A9.95 9.95 0 0 1 2.001 12c0-5.523 4.477-10 10-10M8.593 7.3l-.2.008a1 1 0 0 0-.372.1a1.3 1.3 0 0 0-.294.228c-.12.113-.188.211-.261.306A2.73 2.73 0 0 0 6.9 9.62c.002.49.13.967.33 1.413c.409.902 1.082 1.857 1.97 2.742c.214.213.424.427.65.626a9.45 9.45 0 0 0 3.84 2.046l.568.087c.185.01.37-.004.556-.013a2 2 0 0 0 .833-.231a5 5 0 0 0 .383-.22q.001.002.125-.09c.135-.1.218-.171.33-.288q.126-.13.21-.302c.078-.163.156-.474.188-.733c.024-.198.017-.306.014-.373c-.004-.107-.093-.218-.19-.265l-.582-.261s-.87-.379-1.402-.621a.5.5 0 0 0-.176-.041a.48.48 0 0 0-.378.127c-.005-.002-.072.055-.795.931a.35.35 0 0 1-.368.13a1.4 1.4 0 0 1-.191-.066c-.124-.052-.167-.072-.252-.108a6 6 0 0 1-1.575-1.003c-.126-.11-.243-.23-.363-.346a6.3 6.3 0 0 1-1.02-1.268l-.059-.095a1 1 0 0 1-.102-.205c-.038-.147.061-.265.061-.265s.243-.266.356-.41c.11-.14.203-.276.263-.373c.118-.19.155-.385.093-.536q-.42-1.026-.868-2.041c-.059-.134-.234-.23-.393-.249q-.081-.01-.162-.016a3 3 0 0 0-.403.004z" />
       </svg>
     ),
-    home: (props) => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" {...props}>
-      <title>Inicio</title>
-        <path fill={darkMode ? "white" : "currentColor"} d="m21.743 12.331l-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a1 1 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669" />
-      </svg>
-    ),
     dark: (props) => (
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" {...props}>
-        <title>Inicio</title>
+        <title>Dark</title>
         <path fill={darkMode ? "white" : "currentColor"} d="M11.01 3.05C6.51 3.54 3 7.36 3 12a9 9 0 0 0 9 9c4.63 0 8.45-3.5 8.95-8c.09-.79-.78-1.42-1.54-.95A5.403 5.403 0 0 1 11.1 7.5c0-1.06.31-2.06.84-2.89c.45-.67-.04-1.63-.93-1.56" />
+      </svg>
+    ),
+    light: (props) => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" {...props}>
+        <title>Light</title>
+        <path fill={darkMode ? "white" : "currentColor"} d="M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1M2 12a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1m17 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1m-6 8a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0zm5.364-3.05a1 1 0 1 0-1.414 1.414l.707.707a1 1 0 0 0 1.414-1.414zM4.929 4.929a1 1 0 0 1 1.414 0l.707.707A1 1 0 0 1 5.636 7.05l-.707-.707a1 1 0 0 1 0-1.414M7.05 18.364a1 1 0 1 0-1.414-1.414l-.707.707a1 1 0 1 0 1.414 1.414zM19.071 4.929a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M7 12a5 5 0 1 1 10 0a5 5 0 0 1-10 0" clip-rule="evenodd" />
       </svg>
     ),
   };
@@ -65,63 +64,73 @@ export function DockDemo() {
 
     return (
       <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-50">
-      <Dock direction="middle">
-        
-      <button
-      onClick={() => (setIsEnglish(!isEnglish), (isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 flex items-center justify-center group overflow-hidden"
-      aria-label="Change language"
-    >
-      {/* Contenedor central del texto */}
-      <div className="relative w-6 h-6 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={isEnglish ? 'en' : 'es'}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="absolute text-lg font-semibold text-black dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400"
+        <Dock direction="middle">
+          
+          <button
+          onClick={() => (setIsEnglish(!isEnglish), (isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
+          className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 flex items-center justify-center group overflow-hidden"
+          aria-label="Change language"
           >
-            {isEnglish ? 'EN' : 'ES'}
-          </motion.span>
-        </AnimatePresence>
-      </div>
-      
-      {/* Tooltip */}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 5 }}
-            className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap"
-          >
-            {isEnglish ? 'Change to Spanish' : 'Cambiar a Inglés'}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </button>
+            <div className="relative w-6 h-6 flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={isEnglish ? 'en' : 'es'}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="absolute text-lg font-semibold text-black dark:text-white"
+                >
+                  {isEnglish ? 'EN' : 'ES'}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+            
+          </button>
 
-        <Separator className="h-full py-2"></Separator>
-        <DockIcon>
-          <Icons.wsp className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.mail className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.github className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <Icons.linkedin className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
-        </DockIcon>
-        <Separator className="h-full py-2"></Separator>
-        <DockIcon>
-          <Icons.dark className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" onClick={toggleMode}/>
-        </DockIcon>
+            <Separator className="h-full py-2"></Separator>
+            
+            <DockIcon>
+              <Icons.wsp className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+            </DockIcon>
+            <DockIcon>
+              <Icons.mail className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+            </DockIcon>
+            <DockIcon>
+              <Icons.github className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+            </DockIcon>
+            <DockIcon>
+              <Icons.linkedin className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+            </DockIcon>
+
+            <Separator className="h-full py-2"></Separator>
+
+            <button
+              onClick={toggleMode}
+              className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 flex items-center justify-center group overflow-hidden"
+              aria-label="Toggle dark mode"
+            >
+              <div className="relative w-6 h-6 flex items-center justify-center">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={darkMode ? 'dark' : 'light'}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -20, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute"
+                  >
+                    {darkMode ? (
+                      <Icons.light className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300"/>
+                    ) : (
+                      <Icons.dark className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+                    )}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </button>
+
+
       </Dock>
     </div>
     );
