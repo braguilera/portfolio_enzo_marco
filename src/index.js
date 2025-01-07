@@ -25,7 +25,7 @@ import habilidades_en from "./translations/en/habilidades.json"
 
 i18next.init({
     interpolation: { escapeValue: false },
-    lng:"es",
+    lng:"en",
     resources: {
         es: {
             inicio: inicio_es,

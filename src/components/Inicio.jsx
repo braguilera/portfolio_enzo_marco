@@ -29,9 +29,12 @@ const Proyectos = () => {
 
     const navegacion = useNavigate();
 
-    const Alerta = ()  =>{
-        alert("Cv descargado")
-    }
+    const downloadCv = () => {
+        const link = document.createElement("a");
+        link.href = "../../public/CV_Enzo_Marco.pdf"; // Cambia esto por la ruta correcta
+        link.download = "CV_Enzo_Marco.pdf";
+        link.click();
+    };
 
     const leftmostVariants = {
         initial: {
@@ -121,7 +124,7 @@ const Proyectos = () => {
             </p>
 
             <div className="z-10 flex min-h-20 items-center justify-center">
-                <ShimmerButton className="shadow-2xl" funcion={Alerta}>
+                <ShimmerButton className="shadow-2xl" funcion={downloadCv}>
                     <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
                     {t("buttons.downloadCv")}
                     </span>

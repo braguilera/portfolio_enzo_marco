@@ -62,12 +62,16 @@ export function DockDemo() {
       setDarkMode(!darkMode)
     }
 
+    const redirectTo = (url) => {
+      window.open(url, '_blank'); 
+  };
+
     return (
       <div className="fixed bottom-5 left-1/2 translate-x-[-50%] z-50">
         <Dock direction="middle">
           
           <button
-          onClick={() => (setIsEnglish(!isEnglish), (isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
+          onClick={() => (setIsEnglish(!isEnglish), (!isEnglish ? i18n.changeLanguage("es") : i18n.changeLanguage("en") ) )}
           className="relative h-10 w-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-300 flex items-center justify-center group overflow-hidden"
           aria-label="Change language"
           >
@@ -81,7 +85,7 @@ export function DockDemo() {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                   className="absolute text-lg font-semibold text-black dark:text-white"
                 >
-                  {isEnglish ? 'EN' : 'ES'}
+                  {!isEnglish ? 'EN' : 'ES'}
                 </motion.span>
               </AnimatePresence>
             </div>
@@ -91,16 +95,16 @@ export function DockDemo() {
             <Separator className="h-full py-2"></Separator>
             
             <DockIcon>
-              <Icons.wsp className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+              <Icons.wsp className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" onClick={()=>redirectTo('https://wa.me/+5491165062626')}/>
             </DockIcon>
             <DockIcon>
-              <Icons.mail className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+              <Icons.mail className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" onClick={()=>redirectTo('mailto:marco.enzo.w01@gmail.com')}/>
             </DockIcon>
             <DockIcon>
-              <Icons.github className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+              <Icons.github className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" onClick={()=>redirectTo('https://github.com/EnzoMarco01')}/>
             </DockIcon>
             <DockIcon>
-              <Icons.linkedin className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" />
+              <Icons.linkedin className="size-12 sm:size-10 box-border p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-900 duration-300" onClick={()=>redirectTo('https://www.linkedin.com/in/enzomarco/')}/>
             </DockIcon>
 
             <Separator className="h-full py-2"></Separator>

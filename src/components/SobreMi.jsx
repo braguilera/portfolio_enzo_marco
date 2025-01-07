@@ -10,9 +10,12 @@ const SobreMi = () => {
 
   const educations = t("education", { returnObjects: true });
 
-  const Alerta = () => {
-    alert('CV descargado');
-  };
+  const downloadCv = () => {
+    const link = document.createElement("a");
+    link.href = "../../public/CV_Enzo_Marco.pdf"; // Cambia esto por la ruta correcta
+    link.download = "CV_Enzo_Marco.pdf";
+    link.click();
+};
 
   return (
     <>
@@ -64,7 +67,7 @@ const SobreMi = () => {
         </section>
 
         <footer className="mt-8">
-          <ShimmerButton className="shadow-2xl w-full max-w-xs" funcion={Alerta}>
+          <ShimmerButton className="shadow-2xl w-full max-w-xs" funcion={downloadCv}>
             <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
             {t("downloadCV")}
             </span>
