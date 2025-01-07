@@ -12,7 +12,7 @@ const SobreMi = () => {
 
   const downloadCv = () => {
     const link = document.createElement("a");
-    link.href = "../../public/CV_Enzo_Marco.pdf"; // Cambia esto por la ruta correcta
+    link.href = "/CV_Enzo_Marco.pdf";
     link.download = "CV_Enzo_Marco.pdf";
     link.click();
 };
