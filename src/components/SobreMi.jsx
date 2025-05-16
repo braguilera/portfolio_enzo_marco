@@ -12,8 +12,8 @@ const SobreMi = () => {
 
   const downloadCv = () => {
     const link = document.createElement("a");
-    link.href = "/CV_Enzo_Marco.pdf";
-    link.download = "CV_Enzo_Marco.pdf";
+    link.href = "#";
+    link.download = "#";
     link.click();
 };
 
@@ -56,7 +56,7 @@ const SobreMi = () => {
 
         <section className=" mt-6 max-w-2xl ">
           <p className="text-muted-foreground mt-2 dark:text-gray-300">{t("introduction.greeting")}</p>
-          <h2 className="text-slate-900 text-4xl font-semibold dark:text-gray-100">Enzo Marco</h2>
+          <h2 className="text-slate-900 text-4xl font-semibold dark:text-gray-100">Juan Pérez</h2>
           <h3 className="text-muted-foreground font-light text-lg pb-2">{t("introduction.title")}</h3>
           <p className="text-slate-700 leading-relaxed dark:text-gray-300">
           {t("introduction.description1")}
@@ -67,7 +67,7 @@ const SobreMi = () => {
         </section>
 
         <footer className="mt-8">
-          <ShimmerButton className="shadow-2xl w-full max-w-xs" funcion={downloadCv}>
+          <ShimmerButton className="shadow-2xl w-full max-w-xs">
             <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
             {t("downloadCV")}
             </span>
